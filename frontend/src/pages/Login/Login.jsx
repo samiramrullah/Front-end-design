@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import './Login.css'
 const Login = () => {
   
   const[email,setemail]=useState();
   const[password,setpassword]=useState();
+  const naviate=useNavigate();
   let jwttoken;
   const onSubmitLogin=(e)=>{
     e.preventDefault();
@@ -15,7 +17,9 @@ const Login = () => {
     axios.post('http://localhost:5000/users/login',userData)
     .then(res=>{
       jwttoken=res.data.token;
-      localStorage.setItem('userToken',res.data.token)
+      localStorage.setItem('userToken',res.data.token);
+      naviate('/dashboard');
+
     })
     .catch(err=>console.log(err))
   }
