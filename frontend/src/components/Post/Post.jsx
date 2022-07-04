@@ -1,15 +1,33 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState} from 'react';
+import jwt_decode from "jwt-decode";
+import axios from 'axios';
+
+ 
 const Post = () => {
     const [countryToSend,setcountryToSend]=useState();
     const [countryToRecieve,setcountryToRecieve]=useState();
+    const [amount,setamount]=useState();
+ 
     const onSubmitHandler=(e)=>{
         e.preventDefault();
+        var token = localStorage.userToken;
+        var decoded = jwt_decode(token);
+        var userId=decoded.userId;
         const userData={
             countryToSend,
             countryToRecieve,
-        };
-        console.log(userData);
+            amount,
+        };  
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization':`bearer ${token}`
+          }
+          
+        // console.log(userData);
+        axios.post('http://localhost:5000/post',userData,{headers:headers})
+        .then((res=>console.log(res)))
+        .catch(err=>console.log(err))
     }
     return (
         <center>
@@ -23,7 +41,7 @@ const Post = () => {
                                 <option>India</option>
                                 <option>Chanda</option>
                                 </select> 
-                            <input type={'number'} class="form-control" placeholder="Enter amount" required />
+                            <input type={'number'} class="form-control" placeholder="Enter amount" required onChange={(e)=>setamount(e.target.value)} />
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
@@ -31,7 +49,7 @@ const Post = () => {
                                 <option>Canada</option>
                                 <option>India</option>
                                 </select> 
-                            <input type={'number'} class="form-control" placeholder="Enter amount" />
+                            {/* <input type={'number'} class="form-control" placeholder="Enter amount" /> */}
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

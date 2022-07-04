@@ -3,16 +3,16 @@ const router=express.Router();
 const productSchema=require('../../models/Product');
 const mongoose=require('mongoose');
 const multer=require('multer')
-const upload=multer({dest:'uploads/'});
 const checkAuth=require('../../middleware/check-auth')
-const storage=multer.diskStorage({
-    destination:function(req,file,cb){
-       cb(null,'./uploads/');
-    },
-    filename:function(req,file,cb){
-     cb(null,new Date().toISOString()+file.originalname);
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null,"./uploads");
+     },
+    filename: function (req, file, cb) {
+        cb(null , file.originalname);
     }
-})
+});
+var upload = multer({ storage: storage })
 router.get('/',(req,res,next)=>{
    productSchema.find()
    .select('name price _id')
@@ -30,9 +30,10 @@ router.get('/',(req,res,next)=>{
     })
    })
 });
-upload.single('productImage')
-router.post('/',checkAuth,(req,res,next)=>{
-    // console.log(req.file);
+
+router.post('/',upload.single('productImage'),(req,res,next)=>{
+    console.log(req.body,req.file,req.files);
+
     const product=new productSchema({
         _id:new mongoose.Types.ObjectId,
         name:req.body.name,

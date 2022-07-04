@@ -6,6 +6,7 @@ const mongoose=require('mongoose')
 const productRoutes=require('./api/routes/Product')
 const ordersRoutes=require('./api/routes/Orders')
 const usersRoutes=require('./api/routes/User');
+const postRouter=require('./api/routes/Posts');
 const db='mongodb://localhost:27017/Credadda';
 
 
@@ -35,7 +36,8 @@ app.use((req,res,next)=>{
 // Routes to handel request
 app.use('/products',productRoutes)
 app.use('/orders',ordersRoutes);
-app.use('/users',usersRoutes)
+app.use('/users',usersRoutes);
+app.use('/post',postRouter);
 
 
 //Error handeling
