@@ -30,7 +30,7 @@ router.get('/',(req,res,next)=>{
     })
    })
 });
-//upload.single('productImage')
+upload.single('productImage')
 router.post('/',checkAuth,(req,res,next)=>{
     // console.log(req.file);
     const product=new productSchema({
