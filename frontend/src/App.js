@@ -6,11 +6,13 @@ import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
+import Infocard from './utils/Helpers/Infocard';
 import './App.css';
 function App() {
   return (
     <div className="App">
      {/* <Navbar/> */}
+     <Infocard/>
      <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/signup' element={<Signup/>}/>

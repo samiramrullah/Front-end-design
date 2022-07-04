@@ -11,13 +11,17 @@ import {NavLink, Route, Routes} from 'react-router-dom'
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Post from '../../components/Post/Post';
-import Profile from '../../components/Profile/Profile'
+import Profile from '../../components/Profile/Profile';
+import jwt_decode from "jwt-decode";
 import './Dashboard.css'
 const { Header, Content, Footer, Sider } = Layout;
 
 
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
+  var token=localStorage.userToken;
+  var decoded=jwt_decode(token)
+  console.log(decoded);
   return (
     <Layout
       style={{
