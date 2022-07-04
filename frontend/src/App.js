@@ -6,7 +6,6 @@ import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
-// import Footer from './components/Footer/Footer';
 import './App.css';
 function App() {
   return (
