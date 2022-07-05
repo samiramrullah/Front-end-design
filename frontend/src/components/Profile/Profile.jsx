@@ -11,9 +11,6 @@ const Post = () => {
         var decoded = jwt_decode(token);
         var userId = decoded.userId;
         const userData = {
-            // countryToSend,
-            // countryToRecieve,
-            // amount,
             userId
         };
         const headers = {
@@ -37,8 +34,8 @@ const Post = () => {
                 </div>
             </center>
             <center className="row mt-5">
-                {data.length>0?(
-                    data.map(itm=>(
+                {Array.isArray(data)?(
+                    data?.map(itm=>(
                         <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount}/></div>
                     ))
                 ):null}

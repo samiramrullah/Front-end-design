@@ -1,8 +1,4 @@
 import { 
-  // DesktopOutlined,
-  // FileOutlined,
-  // PieChartOutlined,
-  // TeamOutlined,
   UserOutlined,
  } from '@ant-design/icons';
 import {Layout, Menu  } from 'antd';
@@ -30,10 +26,26 @@ const Dashboard = () => {
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="logo" style={{textAlign:'center'}} >Samir</div>
-        <Menu theme="dark" defaultSelectedKeys={["demo"]} mode="inline"  
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"  
         >
-          <NavLink to='/dashboard/profile'><Menu.Item key="demo"><UserOutlined />Profile</Menu.Item></NavLink>
-          <NavLink to='/dashboard/post'><Menu.Item key="data" ><UserOutlined />Post</Menu.Item></NavLink>
+          <Menu.Item>
+            <NavLink to={"/dashboard/profile"}>
+              <UserOutlined /> Profile
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item>
+            <NavLink to={"/dashboard/post"}>
+              <UserOutlined /> Post
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item>
+            <NavLink to={"/"}>
+              <UserOutlined /> Home
+            </NavLink>
+          </Menu.Item>
+         
+          {/* <NavLink to='/dashboard/profile'><Menu.Item key="demo"><UserOutlined />Profile</Menu.Item></NavLink>
+          <NavLink to='/dashboard/post'><Menu.Item key="data" ><UserOutlined />Post</Menu.Item></NavLink> */}
           </Menu>
       </Sider>
       <Layout className="site-layout">

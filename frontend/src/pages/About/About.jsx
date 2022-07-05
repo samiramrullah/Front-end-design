@@ -1,8 +1,8 @@
 import React from 'react'
-
+import HomeWrapper from '../../components/HomeWrapper'
 const About = () => {
   return (
-    <div>About</div>
+    <HomeWrapper>About</HomeWrapper>
   )
 }
 

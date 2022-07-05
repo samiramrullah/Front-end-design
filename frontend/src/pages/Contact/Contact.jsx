@@ -1,8 +1,8 @@
 import React from 'react'
-
+import HomeWrapper from '../../components/HomeWrapper'
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <HomeWrapper>Contact</HomeWrapper>
   )
 }
 
