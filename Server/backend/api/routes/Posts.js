@@ -37,6 +37,7 @@ router.get("/", checkAuth, (req, res, next) => {
       .then((result) => res.status(200).json(result))
       .catch((err) => res.status(400).json(err));
   } catch (error) {
+    console.log('here');
     res.status(400).json({"Error":"Invalid Credentials"})
   }
 });

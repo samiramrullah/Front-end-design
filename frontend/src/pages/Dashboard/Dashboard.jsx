@@ -19,9 +19,9 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
-  var token=localStorage.userToken;
-  var decoded=jwt_decode(token)
-  console.log(decoded);
+  // var token=localStorage.userToken;
+  // var decoded=jwt_decode(token)
+  // console.log(decoded);
   return (
     <Layout
       style={{
