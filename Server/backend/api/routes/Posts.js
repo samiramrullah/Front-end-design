@@ -26,7 +26,7 @@ router.post("/", checkAuth, (req, res, next) => {
     res.status(500).json({ error: err });
   }
 });
-router.get("/", checkAuth, (req, res, next) => {
+router.post("/userinfo", checkAuth, (req, res, next) => {
   try {
     userid = req.body.userId;
     postSchema

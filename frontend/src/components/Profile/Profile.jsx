@@ -10,20 +10,18 @@ const Post = () => {
         var token = localStorage.userToken;
         var decoded = jwt_decode(token);
         var userId = decoded.userId;
-        // const userData = {
-        //     // countryToSend,
-        //     // countryToRecieve,
-        //     // amount,
-        //     userId
-        // };
+        const userData = {
+            // countryToSend,
+            // countryToRecieve,
+            // amount,
+            userId
+        };
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': `bearer ${token}`
         }
-
-        console.log(userId);
-        axios.post('http://localhost:5000/post/', userId, { headers: headers })
-            .then((res => console.log(res)))
+        axios.post('http://localhost:5000/post/userinfo', userData, { headers: headers })
+            .then((res =>setdata(res.data)))
             .catch(err => console.log(err))
     },[])
     return (
@@ -38,8 +36,13 @@ const Post = () => {
                     </div>
                 </div>
             </center>
-            <center className="row">
-                <div className="col"><PostCard countryToSend="INDIA" countryToRecieve="CANADA" amount="1500"/></div>
+            <center className="row mt-5">
+                {data.length>0?(
+                    data.map(itm=>(
+                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount}/></div>
+                    ))
+                ):null}
+                
                 
             </center>
         </div>
