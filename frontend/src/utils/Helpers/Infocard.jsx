@@ -1,28 +1,28 @@
 import React from 'react'
-
+import { Modal, Space } from 'antd';
+import { useDispatch } from 'react-redux';
+import { setpostStatus } from '../../redux/PostSlice';
 const Infocard = () => {
-  return (
-    <div>
-      <div class="modal show">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Modal title</h4>
-            </div>
-
-            <div class="modal-body">
-              <p>One fine body&hellip;</p>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
+  const dispatch = useDispatch();
+  const info = () => {
+    Modal.success({
+      title: 'Posted Successfully',
+      content: (
+        <div>
+          <p>We will contact you at your registered contact number soon</p>
+          <p>You can also contact us at +91-9041952237</p>
         </div>
-      </div>
-    </div>
+      ),
+
+      onOk() {
+        dispatch(setpostStatus(false))
+      },
+    });
+  };
+  return (
+    <Space wrap>
+      {info()}
+    </Space>
   )
 }
 

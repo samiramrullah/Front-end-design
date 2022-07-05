@@ -30,14 +30,12 @@ const Post = () => {
 
         console.log(userData);
         axios.post('http://localhost:5000/post', userData, { headers: headers })
-                .then(res=>alert('Posted Successfully'))
-            // .then((res => dispatch(setpostStatus(true))))
+            .then((res => dispatch(setpostStatus(true))))
             .catch(err => console.log(err))
     }
-    // console.log(postStatus);
     return (
         <center>
-            {false ? (<Infocard/>) : (
+            {postStatus ? (<Infocard/>) : (
                 <div class="card" style={{ width: "18rem" }}>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
