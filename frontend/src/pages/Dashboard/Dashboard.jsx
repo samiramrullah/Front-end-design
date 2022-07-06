@@ -8,6 +8,7 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Post from '../../components/Post/Post';
 import Profile from '../../components/Profile/Profile';
+import Login from '../../pages/Login/Login';
 import './Dashboard.css'
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -15,79 +16,93 @@ const { Header, Content, Footer, Sider } = Layout;
 const Dashboard = () => {
   const naviate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
+  const notLoggedIn=()=>{
+    naviate('/login');
+  }
   const logoutHandler = () => {
     localStorage.setItem('userToken', null)
     naviate('/')
   }
-  return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="logo" style={{ textAlign: 'center' }} >Samir</div>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"
-        >
-          <Menu.Item>
-            <NavLink to={"/dashboard/profile"}>
-              <UserOutlined /> Profile
-            </NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to={"/dashboard/post"}>
-              <UserOutlined /> Post
-            </NavLink>
-          </Menu.Item>
-          <Menu.Item>
-            <NavLink to={"/"}>
-              <UserOutlined /> Home
-            </NavLink>
-          </Menu.Item>
-          <Menu.Item onClick={logoutHandler} >
-            <LogoutOutlined />
-          </Menu.Item>
-        </Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-          }}
-
-        > <h3 style={{ textAlign: 'center' }}>User Name</h3></Header>
-        <Content
-          style={{
-            margin: '0 16px',
-          }}
-        >
-          <div
+  if(localStorage.userToken)
+  {
+    return (
+      <Layout
+        style={{
+          minHeight: '100vh',
+        }}
+      >
+        <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+          <div className="logo" style={{ textAlign: 'center' }} >Samir</div>
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"
+          >
+            <Menu.Item>
+              <NavLink to={"/dashboard/profile"}>
+                <UserOutlined /> Profile
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to={"/dashboard/post"}>
+                <UserOutlined /> Post
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item>
+              <NavLink to={"/"}>
+                <UserOutlined /> Home
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item onClick={logoutHandler} >
+              <LogoutOutlined />
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout className="site-layout">
+          <Header
             className="site-layout-background"
             style={{
-              padding: 24,
-              minHeight: 600,
-
+              padding: 0,
+            }}
+  
+          > <h3 style={{ textAlign: 'center' }}>User Name</h3></Header>
+          <Content
+            style={{
+              margin: '0 16px',
             }}
           >
-            <Routes>
-              <Route path='/about' element={<About />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/post' element={<Post />} />
-            </Routes>
-          </div>
-        </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          © Credadda 2022
-        </Footer>
+            <div
+              className="site-layout-background"
+              style={{
+                padding: 24,
+                minHeight: 600,
+  
+              }}
+            >
+              <Routes>
+                <Route path='/about' element={<About />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/post' element={<Post />} />
+              </Routes>
+            </div>
+          </Content>
+          <Footer
+            style={{
+              textAlign: 'center',
+            }}
+          >
+            © Credadda 2022
+          </Footer>
+        </Layout>
       </Layout>
-    </Layout>
-  );
+    );
+  }
+  else
+  {
+    return(
+      <center>
+      <Login/>
+      </center>
+    )
+  }
 };
 
 export default Dashboard;
