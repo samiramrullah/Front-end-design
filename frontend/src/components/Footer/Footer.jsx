@@ -11,7 +11,6 @@ const Footer = () => {
           <div class="me-5 d-none d-lg-block" style={{ textAlign: 'center' }}>
             <span>Get connected with us on social networks:</span>
           </div>
-
           <div>
             <a href="https://www.facebook.com/samiramrullah/" class="me-4 text-reset">
               <FacebookFilled />
@@ -78,10 +77,10 @@ const Footer = () => {
                   Contact
                 </h6>
                 <p><HomeFilled clasName="me-3" /> Sector 12, Chandigarh 160012, India</p>
-                <p>
+                <a>
                   <MessageFilled clasName="me-3" />
                   samiramrullah@gmail.com
-                </p>
+                </a>
                 <p><PhoneFilled clasName="me-3" />  + 977 9823231006</p>
                 <p><PhoneFilled clasName="me-3" />  + 91 9041952237</p>
               </div>
@@ -90,7 +89,7 @@ const Footer = () => {
         </section>
         <div class="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
           © 2021 Copyright:
-          <NavLink to={'/'} class="text-reset fw-bold">Credadda.com</NavLink>
+          <NavLink to={'/'} class="text-reset fw-bold"> Credadda.com</NavLink>
         </div>
       </footer>
     </div>

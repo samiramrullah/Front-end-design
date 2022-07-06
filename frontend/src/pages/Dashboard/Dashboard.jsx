@@ -32,7 +32,7 @@ const Dashboard = () => {
         }}
       >
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-          <div className="logo" style={{ textAlign: 'center' }} >Samir</div>
+          <div className="logo" style={{ textAlign: 'center' , backgroundColor:'#6197c2cc'}} ><b>Cred Adda</b></div>
           <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"
           >
             <Menu.Item>
