@@ -28,7 +28,6 @@ const Post = () => {
             'Authorization': `bearer ${token}`
         }
 
-        console.log(userData);
         axios.post('http://localhost:5000/post', userData, { headers: headers })
             .then((res => dispatch(setpostStatus(true))))
             .catch(err => console.log(err))

@@ -1,23 +1,24 @@
 import { 
-  UserOutlined,
+  UserOutlined,LogoutOutlined
  } from '@ant-design/icons';
 import {Layout, Menu  } from 'antd';
 import { useState } from 'react';
-import {NavLink, Route, Routes} from 'react-router-dom'
+import {NavLink, Route, Routes,useNavigate} from 'react-router-dom'
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Post from '../../components/Post/Post';
 import Profile from '../../components/Profile/Profile';
-import jwt_decode from "jwt-decode";
 import './Dashboard.css'
 const { Header, Content, Footer, Sider } = Layout;
 
 
 const Dashboard = () => {
+  const naviate=useNavigate();
   const [collapsed, setCollapsed] = useState(false);
-  // var token=localStorage.userToken;
-  // var decoded=jwt_decode(token)
-  // console.log(decoded);
+  const logoutHandler=()=>{
+    localStorage.setItem('userToken',null)
+   naviate('/')
+  }
   return (
     <Layout
       style={{
@@ -43,7 +44,9 @@ const Dashboard = () => {
               <UserOutlined /> Home
             </NavLink>
           </Menu.Item>
-         
+           <Menu.Item onClick={logoutHandler} >
+           <LogoutOutlined />
+           </Menu.Item>
           {/* <NavLink to='/dashboard/profile'><Menu.Item key="demo"><UserOutlined />Profile</Menu.Item></NavLink>
           <NavLink to='/dashboard/post'><Menu.Item key="data" ><UserOutlined />Post</Menu.Item></NavLink> */}
           </Menu>

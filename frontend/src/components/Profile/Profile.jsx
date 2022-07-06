@@ -21,6 +21,7 @@ const Post = () => {
             .then((res =>setdata(res.data)))
             .catch(err => console.log(err))
     },[])
+    console.log(data);
     return (
         <div>
             <center>
@@ -36,7 +37,7 @@ const Post = () => {
             <center className="row mt-5">
                 {Array.isArray(data)?(
                     data?.map(itm=>(
-                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount}/></div>
+                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id}/></div>
                     ))
                 ):null}
                 
