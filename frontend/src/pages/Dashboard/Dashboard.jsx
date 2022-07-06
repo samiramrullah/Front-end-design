@@ -1,9 +1,9 @@
-import { 
-  UserOutlined,LogoutOutlined
- } from '@ant-design/icons';
-import {Layout, Menu  } from 'antd';
+import {
+  UserOutlined, LogoutOutlined
+} from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
 import { useState } from 'react';
-import {NavLink, Route, Routes,useNavigate} from 'react-router-dom'
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Post from '../../components/Post/Post';
@@ -13,11 +13,11 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 const Dashboard = () => {
-  const naviate=useNavigate();
+  const naviate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
-  const logoutHandler=()=>{
-    localStorage.setItem('userToken',null)
-   naviate('/')
+  const logoutHandler = () => {
+    localStorage.setItem('userToken', null)
+    naviate('/')
   }
   return (
     <Layout
@@ -26,8 +26,8 @@ const Dashboard = () => {
       }}
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="logo" style={{textAlign:'center'}} >Samir</div>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"  
+        <div className="logo" style={{ textAlign: 'center' }} >Samir</div>
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline"
         >
           <Menu.Item>
             <NavLink to={"/dashboard/profile"}>
@@ -44,12 +44,10 @@ const Dashboard = () => {
               <UserOutlined /> Home
             </NavLink>
           </Menu.Item>
-           <Menu.Item onClick={logoutHandler} >
-           <LogoutOutlined />
-           </Menu.Item>
-          {/* <NavLink to='/dashboard/profile'><Menu.Item key="demo"><UserOutlined />Profile</Menu.Item></NavLink>
-          <NavLink to='/dashboard/post'><Menu.Item key="data" ><UserOutlined />Post</Menu.Item></NavLink> */}
-          </Menu>
+          <Menu.Item onClick={logoutHandler} >
+            <LogoutOutlined />
+          </Menu.Item>
+        </Menu>
       </Sider>
       <Layout className="site-layout">
         <Header
@@ -57,8 +55,8 @@ const Dashboard = () => {
           style={{
             padding: 0,
           }}
-          
-        > <h3 style={{textAlign:'center'}}>User Name</h3></Header>
+
+        > <h3 style={{ textAlign: 'center' }}>User Name</h3></Header>
         <Content
           style={{
             margin: '0 16px',
@@ -69,15 +67,15 @@ const Dashboard = () => {
             style={{
               padding: 24,
               minHeight: 600,
-              
+
             }}
           >
-              <Routes>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/profile' element={<Profile/>}/>
-      <Route path='/post' element={<Post/>}/>
-     </Routes>
+            <Routes>
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/post' element={<Post />} />
+            </Routes>
           </div>
         </Content>
         <Footer
@@ -85,7 +83,7 @@ const Dashboard = () => {
             textAlign: 'center',
           }}
         >
-          Ant Design ©2018 Created by Ant UED
+          © Credadda 2022
         </Footer>
       </Layout>
     </Layout>

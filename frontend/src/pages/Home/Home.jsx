@@ -8,7 +8,6 @@ const Home = () => {
         <section>
           <div className='container'>
             <div className='row justify-content-end ms-auto' style={{ height: '170px', }}>
-
               <div className='col-lg-4 '>
                 <div className="card " style={{ width: '300px', marginTop: '9rem' }}>
                   <div className="card-body">
@@ -25,7 +24,7 @@ const Home = () => {
           <div className='container'>
             <div className='row no-gutters slider-text  align-items-center justify-content-start' style={{ height: '429px', }}>
               <div className='col-md-7'>
-                <h2>Welcome to Vacation Rental</h2>
+                <h2>Showing This</h2>
               </div>
             </div>
           </div>
@@ -34,5 +33,4 @@ const Home = () => {
     </HomeWrapper>
   )
 }
-
 export default Home
