@@ -5,7 +5,6 @@ import jwt_decode from "jwt-decode";
 import { useState } from "react";
 const Post = () => {
     const [data,setdata]=useState();
-    
     useEffect(()=>{
         var token = localStorage.userToken;
         var decoded = jwt_decode(token);
@@ -37,7 +36,7 @@ const Post = () => {
             <center className="row mt-5">
                 {Array.isArray(data)?(
                     data?.map(itm=>(
-                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id}/></div>
+                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
                     ))
                 ):null}
                 

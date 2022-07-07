@@ -1,7 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 const Navbar = () => {
+  const naviate = useNavigate();
+  const logoutHandler = () => {
+    localStorage.userToken = null;
+    naviate('/');
+    alert('Logged Out Successfully')
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark navbar bg-dark navbar-light " id="navbar">
@@ -17,11 +23,11 @@ const Navbar = () => {
               <li className="nav-item active"><NavLink to={'/about'} className="nav-link">About</NavLink></li>
               <li className="nav-item active"><NavLink to={'/signup'} className="nav-link">Sign up</NavLink></li>
               <li className="nav-item active"><NavLink to={'/login'} className="nav-link">Login</NavLink></li>
+              <button onClick={logoutHandler} className='nav-btn'>Logout</button>
             </ul>
           </div>
         </div>
       </nav>
-
     </div>
   )
 }
