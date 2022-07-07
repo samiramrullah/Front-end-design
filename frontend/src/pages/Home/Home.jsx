@@ -1,11 +1,54 @@
-import HomeWrapper from '../../components/HomeWrapper'
-import './Home.css'
+import HomeWrapper from '../../components/HomeWrapper';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import jwt_decode from "jwt-decode";
+import { useState } from 'react';
+// import {setpostStatus} from '../../redux/PostSlice';
+import './Home.css';
+
+
 const Home = () => {
+  const [countryToSend, setcountryToSend] = useState();
+  const [countryToRecieve, setcountryToRecieve] = useState();
+  const [amount, setamount] = useState(); 
+  const naviate=useNavigate();
+  const onSendhandler=(e)=>{
+    e.preventDefault();
+    var token=localStorage.userToken;
+    const headers={
+     'Content-Type':'application/json',
+     'Authorization':`bearer ${token}`
+    }
+    axios.get('http://localhost:5000/checkauth',{headers:headers})
+    .then((res)=>{
+     if(res.data.message==="Authorized")
+     {
+      var decoded = jwt_decode(token);
+      var userId = decoded.userId;
+      const userData = {
+          countryToSend,
+          countryToRecieve,
+          amount,
+          userId
+      };
+      const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': `bearer ${token}`
+      }
+
+      axios.post('http://localhost:5000/post', userData, { headers: headers })
+          .then((res => alert('posted')))
+          .catch(err => console.log(err))
+     }
+     else{
+         naviate('/login')
+     }
+    })
+    .catch(err=>naviate('/login'))
+ }
   return (
     <HomeWrapper>
       <div className='main-wrap' style={{ height: '490px', background: '50%', position: '117px' }} >
-        {/* <div className='overlay'></div> */}
-
         <section>
           <div className='container'>
             <div className='row' >
@@ -15,21 +58,19 @@ const Home = () => {
                   <h1 className='title'>Welcome to Cred Adda</h1>
                   <b>Send Your Money with in fast, secure and trusted way</b>
                 </div>
-                <form className=' row mt-5 mb-3  d-flex align-items-center' >
+                <form onSubmit={onSendhandler} className=' row mt-5 mb-3  d-flex align-items-center' >
                   <div class="form-group row">
                     <div className='col'>
-                      <select className="form-select" aria-label="Default select example" >
+                      <select className="form-select" aria-label="Default select example" onChange={(e)=>setcountryToSend(e.target.value)}>
                         <option>India</option>
                         <option>Chanda</option>
                       </select>
                     </div>
                     <div className='col'>
-                      <input type={'number'} class="form-control mb-2" placeholder="Enter amount" required />
-
+                      <input type={'number'} class="form-control mb-2" placeholder="Enter amount"  required onChange={(e)=>setamount(e.target.value)} />
                     </div>
-
                     <div className='col'>
-                      <select className="form-select" aria-label="Default select example" >
+                      <select className="form-select" aria-label="Default select example" onChange={(e)=>setcountryToRecieve(e.target.value)} >
                         <option>Canada</option>
                         <option>India</option>
                       </select>
@@ -37,12 +78,8 @@ const Home = () => {
                     <div className='col d-flex justify-content-center '>
                       <button type="submit" class="btn btn-outline-dark">Send</button>
                     </div>
-
                   </div>
-
-
                 </form>
-
               </div>
               <div className='col-auto'>
                 <div className="card " style={{ width: '300px', marginTop: '5rem' }}>
