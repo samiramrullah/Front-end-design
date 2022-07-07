@@ -13,6 +13,7 @@ const Home = () => {
 
                 <div className="row  d-flex align-items-end">
                   <h1 className='title'>Welcome to Cred Adda</h1>
+                  <b>Send Your Money with in fast, secure and trusted way</b>
                 </div>
                 <form className=' row mt-5 mb-3  d-flex align-items-center' >
                   <div class="form-group row">
@@ -34,7 +35,7 @@ const Home = () => {
                       </select>
                     </div>
                     <div className='col d-flex justify-content-center '>
-                      <button type="submit" class="btn btn-outline-dark">Submit</button>
+                      <button type="submit" class="btn btn-outline-dark">Send</button>
                     </div>
 
                   </div>

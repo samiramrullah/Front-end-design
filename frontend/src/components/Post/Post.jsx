@@ -65,29 +65,20 @@ const Post = () => {
                                         <input type={'number'} class="form-control mb-2" placeholder="Enter amount" required onChange={(e) => setamount(e.target.value)} />
                                         <small id="emailHelp" className="form-text text-muted mt-2">We'll never share your email with anyone else.</small>
                                     </div>
-
                                     <div className='col'>
                                         <select className="form-select" aria-label="Default select example" onChange={(e) => setcountryToRecieve(e.target.value)}>
                                             <option>Canada</option>
                                             <option>India</option>
                                         </select>
                                     </div>
-
-
                                 </div>
-
-
                             </form>
                             <div className='row d-flex justify-content-center'>
                                 <div className='col-6 col-md-4'>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
-
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             )}
