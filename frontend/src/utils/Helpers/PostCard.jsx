@@ -43,12 +43,12 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
           Amount
           <div className="col col mt-2 auto">{amount}</div>
         </div>
-       <div>
-       <Button size="default" className="float-left">Update</Button>
-        <Button onClick={deletePost} size="default" className="float-right" >
-          Delete
-        </Button>
-       </div>
+        <div >
+          <Button style={{ justifyContent: 'space-evenly' }} size="default">Update</Button>
+          <Button onClick={deletePost} size="default">
+            Delete
+          </Button>
+        </div>
       </Card>
     </div>
   );

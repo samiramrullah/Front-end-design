@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 // import {setpostStatus} from '../../redux/PostSlice';
 import './Home.css';
+import About from '../About/About';
 
 
 const Home = () => {
@@ -107,7 +108,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-
+        <About/>
       </div>
     </HomeWrapper>
   )

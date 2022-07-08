@@ -53,7 +53,7 @@ const Post = () => {
                                     <DollarCircleOutlined style={{ fontSize: '4rem', color: '#757573' }} />
                                 </div>
                             </div>
-                            <form className=' row mt-5 mb-3  d-flex align-items-center' onSubmit={onSubmitHandler}>
+                            <form className=' row mt-5 mb-3  d-flex align-items-center'>
                                 <div class="form-group row">
                                     <div className='col'>
                                         <select className="form-select" aria-label="Default select example" onChange={(e) => setcountryToSend(e.target.value)}>
@@ -75,7 +75,7 @@ const Post = () => {
                             </form>
                             <div className='row d-flex justify-content-center'>
                                 <div className='col-6 col-md-4'>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button onClick={onSubmitHandler} type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </div>

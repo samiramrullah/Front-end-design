@@ -6,6 +6,7 @@ const postSchema = require("../../models/Posts");
 router.post("/", checkAuth, (req, res, next) => {
   let date = new Date().toUTCString();
   date = String(date);
+  console.log(date);
   const newpost = new postSchema({
     countryToSend: req.body.countryToSend,
     countryToRecieve: req.body.countryToRecieve,
