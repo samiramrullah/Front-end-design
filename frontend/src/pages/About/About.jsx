@@ -1,15 +1,20 @@
 import React from 'react'
 import HomeWrapper from '../../components/HomeWrapper';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './About.css';
 const About = () => {
+  const navigate = useNavigate();
+  const backbuttonHandler = () => {
+    navigate(-1)
+  }
   return (
     <HomeWrapper>
       <div className="AboutMain">
+        
         <div class="we-are-block">
 
           <div id="about-us-section">
-
+          <button className='btn btn-light mt-1' onClick={backbuttonHandler}>Back</button>
             <div class="about-us-image">
 
               <img src="https://wallpaperaccess.com/full/2675409.jpg" width="808" height="458" alt="Lobby Image" />

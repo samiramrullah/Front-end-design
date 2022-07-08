@@ -1,5 +1,5 @@
 import {
-  UserOutlined, LogoutOutlined
+  UserOutlined, LogoutOutlined, HomeOutlined, InfoCircleTwoTone
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import { useState, useEffect } from 'react';
@@ -57,13 +57,19 @@ const Dashboard = () => {
                 </NavLink>
               </Menu.Item>
               <Menu.Item>
+                <NavLink to={'/about'} >
+                  <InfoCircleTwoTone /> About
+                </NavLink>
+              </Menu.Item>
+              <Menu.Item>
                 <NavLink to={"/"}>
-                  <UserOutlined /> Home
+                  <HomeOutlined /> Home
                 </NavLink>
               </Menu.Item>
               <Menu.Item onClick={logoutHandler} >
                 <LogoutOutlined />
               </Menu.Item>
+
             </Menu>
           </Sider>
           <Layout className="site-layout">

@@ -32,40 +32,50 @@ const Signup = () => {
   }
   return (
     <HomeWrapper>
-      <div className='container mt-3 signupmain'>
-        <form onSubmit={onSubmitHandler}>
-          <div className="mb-3">
-            <label className="form-label">First Name</label>
-            <input type={'text'} className="form-control" required onChange={(e) => setfirstName(e.target.value)} value={firstName} />
+      <div className="row">
+        <div className="col">
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title text-center">
+                Sign up
+              </h3>
+              <form onSubmit={onSubmitHandler}>
+                <div class="mb-3">
+                  <label>Fist Name</label>
+                  <input type={'text'} class="form-control" required  onChange={(e)=>setfirstName(e.target.value)}/>
+                </div>
+                <div class="mb-3">
+                  <label>Last Name</label>
+                  <input type="email" class="form-control"  onChange={(e)=>setlastName(e.target.value)}/>
+                </div>
+                <div class="mb-3">
+                  <label>Contact Number</label>
+                  <input type={'text'} class="form-control" required onChange={(e)=>setphoneNumber(e.target.value)}/>
+                </div>
+                <div class="mb-3">
+                  <label>Email address</label>
+                  <input type="email" class="form-control" required onChange={(e)=>setemail(e.target.value)} />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" required  onChange={(e)=>setpassword(e.target.value)}/>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control" required  onChange={(e)=>setcnfpassword(e.target.value)}/>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                  <label class="form-check-label" for="exampleCheck1">You agree to our terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
           </div>
-          <div className="mb-3">
-            <label className="form-label">Last Name</label>
-            <input type={'text'} className="form-control" onChange={(e) => setlastName(e.target.value)} value={lastName} />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Phone Number</label>
-            <input type={'tel'} className="form-control" required onChange={(e) => setphoneNumber(e.target.value)} value={phoneNumber} />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Email address</label>
-            <input type="email" className="form-control" onChange={(e) => setemail(e.target.value)} value={email} />
-            <div className="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" required onChange={(e) => setpassword(e.target.value)} value={password} />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Confirm Password</label>
-            <input type="password" className="form-control" required onChange={(e) => setcnfpassword(e.target.value)} value={cnfpassword} />
-          </div>
-          <div className="mb-3 form-check">
-            <input type="checkbox" className="form-check-input" required />
-            <label className="form-check-label">By checking in this button you agree to our terms and conditions</label>
-          </div>
-          <button type="submit" className="btn btn-primary">Sign Up</button>
-        </form>
+        </div>
+        <div className="col">
+          <img src='https://wallpaperaccess.com/full/2675409.jpg' width="100%" height="458" alt="Lobby Image" />
+        </div>
       </div>
     </HomeWrapper>
   )
