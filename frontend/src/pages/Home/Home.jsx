@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
-// import {setpostStatus} from '../../redux/PostSlice';
+import Services from '../../components/Services/Services';
 import './Home.css';
 import About from '../About/About';
 
@@ -108,8 +108,9 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <About/>
+        <Services/>
       </div>
+      
     </HomeWrapper>
   )
 }
