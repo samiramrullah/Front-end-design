@@ -8,6 +8,8 @@ const ordersRoutes=require('./api/routes/Orders')
 const usersRoutes=require('./api/routes/User');
 const postRouter=require('./api/routes/Posts');
 const checkAuth=require('./api/routes/CheckAuth');
+const emailRouter=require('./api/routes/Email')
+
 const db='mongodb://localhost:27017/Credadda';
 
 
@@ -40,6 +42,7 @@ app.use('/orders',ordersRoutes);
 app.use('/users',usersRoutes);
 app.use('/post',postRouter);
 app.use('/checkauth',checkAuth);
+app.use('/email',emailRouter)
 
 //Error handeling
 //if no paths matched
