@@ -1,0 +1,27 @@
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.text-primary {
+  color: #ed6436 !important;
+}
+.text-primary {
+  color: #ed6436 !important;
+}
+
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #c53f12 !important;
+}
+.form-group {
+    margin-bottom: 1rem;
+  }

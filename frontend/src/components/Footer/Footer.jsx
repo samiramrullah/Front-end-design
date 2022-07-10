@@ -1,99 +1,87 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { FacebookFilled, TwitterCircleFilled, GoogleCircleFilled, LinkedinFilled, HomeFilled, MessageFilled, PhoneFilled } from '@ant-design/icons'
+import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled } from '@ant-design/icons';
+import './Footer.css'
 const Footer = () => {
-  return (
-    <div>
-
-      <footer class="text-center text-lg-start bg-light text-muted">
-        <section
-          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          <div class="me-5 d-none d-lg-block" style={{ textAlign: 'center' }}>
-            <span>Get connected with us on social networks:</span>
-          </div>
-          <div>
-            <a href="https://www.facebook.com/samiramrullah/" class="me-4 text-reset">
-              <FacebookFilled />
-            </a>
-            <a href="" class="me-4 text-reset">
-              <TwitterCircleFilled />
-            </a>
-            <a href="" class="me-4 text-reset">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-              <GoogleCircleFilled />
-            </a>
-            <a href="" class="me-4 text-reset">
-              <LinkedinFilled />
-            </a>
-          </div>
-        </section>
-        <section class="">
-          <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class="fas fa-gem me-3"></i>Cred Adda
-                </h6>
-                <p>
-                  Short Intro of Company <br />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores maxime, corrupti adipisci laborum minima animi sunt expedita, illo cumque eius saepe eligendi eum natus. Velit optio eaque aspernatur nostrum?
-                </p>
-              </div>
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Why Cred Adda
-                </h6>
-                <p>
-                  <a href="#!" class="text-reset">Trusted</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Fast</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Gurantee</a>
-                </p>
-              </div>
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Our Services
-                </h6>
-                <p>
-                  <a href="#!" class="text-reset">24 hrs Customer Support</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Send Money in Short Time</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Send Money with Security</a>
-                </p>
-                <p>
-                  <a href="#!" class="text-reset">Help</a>
-                </p>
-              </div>
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                  Contact
-                </h6>
-                <p><HomeFilled clasName="me-3" /> Sector 12, Chandigarh 160012, India</p>
-                <a>
-                  <MessageFilled clasName="me-3" />
-                  samiramrullah@gmail.com
-                </a>
-                <p><PhoneFilled clasName="me-3" />  + 977 9823231006</p>
-                <p><PhoneFilled clasName="me-3" />  + 91 9041952237</p>
-              </div>
+    return (
+        <div>
+            <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+                <div class="row pt-5">
+                    <div class="col-lg-4 col-md-12 mb-5">
+                        <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Cred</span>Adda</h1>
+                        <p class="m-0">Ipsum amet sed vero et lorem stet eos ut, labore sed sed stet sea est ipsum ut. Volup amet ea sanct ipsum, dolore vero lorem no duo eirmod. Eirmod amet ipsum no ipsum lorem clita ut. Ut sed sit lorem ea lorem sed, amet stet sit sea ea diam tempor kasd kasd. Diam nonumy etsit tempor ut sed diam sed et ea</p>
+                    </div>
+                    <div class="col-lg-8 col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 mb-5">
+                                <h5 class="text-primary mb-4">Get In Touch</h5>
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+                                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                                <div class="d-flex justify-content-start mt-4">
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><TwitterCircleFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><LinkedinFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><InstagramFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><FacebookFilled /></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <h5 class="text-primary mb-4">Popular Links</h5>
+                                <div class="d-flex flex-column justify-content-start">
+                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
+                                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-5">
+                                <h5 class="text-primary mb-4">Newsletter</h5>
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Send Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </section>
-        <div class="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-          © 2021 Copyright:
-          <NavLink to={'/'} class="text-reset fw-bold"> Credadda.com</NavLink>
+            <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style={{ background: '#111111' }}>
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                        <p class="m-0 text-white">
+                            &copy; <a class="text-white font-weight-bold" href="#">Cred Adda</a>. All Rights Reserved. 
+                            
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <ul class="nav d-inline-flex">
+                            <li class="nav-item">
+                                <a class="nav-link text-white py-0" href="#">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white py-0" href="#">Terms</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white py-0" href="#">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white py-0" href="#">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </footer>
-    </div>
-  )
+
+    )
 }
 
-export default Footer
+export default Footer;
