@@ -36,10 +36,10 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div class="col-md-4 mb-5">
-                                <h5 class="text-primary mb-4">Newsletter</h5>
+                                <h5 class="text-primary mb-4">Have a Query?</h5>
                                 <form action="">
                                     <div class="form-group">
-                                        <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                                        <input type="text" class="form-control border-0" placeholder="Text here" required="required" />
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
@@ -57,8 +57,8 @@ const Footer = () => {
                 <div class="row">
                     <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
                         <p class="m-0 text-white">
-                            &copy; <a class="text-white font-weight-bold" href="#">Cred Adda</a>. All Rights Reserved. 
-                            
+                            &copy; <a class="text-white font-weight-bold" href="#">Cred Adda</a>. All Rights Reserved.
+
                         </p>
                     </div>
                     <div class="col-md-6 text-center text-md-right">
@@ -80,7 +80,6 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 

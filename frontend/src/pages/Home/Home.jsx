@@ -4,51 +4,51 @@ import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import Services from '../../components/Services/Services';
+
 import './Home.css';
-import About from '../About/About';
 
 
 const Home = () => {
   const [countryToSend, setcountryToSend] = useState();
   const [countryToRecieve, setcountryToRecieve] = useState();
-  const [amount, setamount] = useState(); 
-  const naviate=useNavigate();
-  const onSendhandler=(e)=>{
+  const [amount, setamount] = useState();
+  const naviate = useNavigate();
+  const onSendhandler = (e) => {
     e.preventDefault();
-    var token=localStorage.userToken;
-    const headers={
-     'Content-Type':'application/json',
-     'Authorization':`bearer ${token}`
+    var token = localStorage.userToken;
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': `bearer ${token}`
     }
-    axios.get('http://localhost:5000/checkauth',{headers:headers})
-    .then((res)=>{
-     if(res.data.message==="Authorized")
-     {
-      var decoded = jwt_decode(token);
-      var userId = decoded.userId;
-      const userData = {
-          countryToSend,
-          countryToRecieve,
-          amount,
-          userId
-      };
-      const headers = {
-          'Content-Type': 'application/json',
-          'Authorization': `bearer ${token}`
-      }
+    axios.get('http://localhost:5000/checkauth', { headers: headers })
+      .then((res) => {
+        if (res.data.message === "Authorized") {
+          var decoded = jwt_decode(token);
+          var userId = decoded.userId;
+          const userData = {
+            countryToSend,
+            countryToRecieve,
+            amount,
+            userId
+          };
+          const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `bearer ${token}`
+          }
 
-      axios.post('http://localhost:5000/post', userData, { headers: headers })
-          .then((res => alert('posted')))
-          .catch(err => console.log(err))
-     }
-     else{
-         naviate('/login')
-     }
-    })
-    .catch(err=>naviate('/login'))
- }
+          axios.post('http://localhost:5000/post', userData, { headers: headers })
+            .then((res => alert('posted')))
+            .catch(err => console.log(err))
+        }
+        else {
+          naviate('/login')
+        }
+      })
+      .catch(err => naviate('/login'))
+  }
   return (
     <HomeWrapper>
+
       <div className='main-wrap' style={{ height: '490px', background: '50%', position: '117px' }} >
         <section>
           <div className='container'>
@@ -62,16 +62,16 @@ const Home = () => {
                 <form onSubmit={onSendhandler} className=' row mt-5 mb-3  d-flex align-items-center' >
                   <div class="form-group row">
                     <div className='col'>
-                      <select className="form-select" aria-label="Default select example" onChange={(e)=>setcountryToSend(e.target.value)}>
+                      <select className="form-select" aria-label="Default select example" onChange={(e) => setcountryToSend(e.target.value)}>
                         <option>India</option>
                         <option>Chanda</option>
                       </select>
                     </div>
                     <div className='col'>
-                      <input type={'number'} class="form-control mb-2" placeholder="Enter amount"  required onChange={(e)=>setamount(e.target.value)} />
+                      <input type={'number'} class="form-control mb-2" placeholder="Enter amount" required onChange={(e) => setamount(e.target.value)} />
                     </div>
                     <div className='col'>
-                      <select className="form-select" aria-label="Default select example" onChange={(e)=>setcountryToRecieve(e.target.value)} >
+                      <select className="form-select" aria-label="Default select example" onChange={(e) => setcountryToRecieve(e.target.value)} >
                         <option>Canada</option>
                         <option>India</option>
                       </select>
@@ -96,7 +96,6 @@ const Home = () => {
 
                       </div>
                     </div>
-
                   </div>
                   <div className="card-body">
                     <h5 className="card-title">Card title</h5>
@@ -108,9 +107,9 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <Services/>
+        <Services />
       </div>
-      
+
     </HomeWrapper>
   )
 }
