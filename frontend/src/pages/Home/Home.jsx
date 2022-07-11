@@ -93,7 +93,6 @@ const Home = () => {
                         <button class="btn btn-outline-dark">
                           <span type="radio" name="options" id="option2" autocomplete="off" /> Log In
                         </button>
-
                       </div>
                     </div>
                   </div>
@@ -107,7 +106,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <Services />
+        {/* <Services /> */}
       </div>
 
     </HomeWrapper>

@@ -1,8 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled } from '@ant-design/icons';
+import { useTranslation } from "react-i18next";
+import LanguageSelect from '../Languages/Languages'
 import './Footer.css'
 const Footer = () => {
+    const { t } = useTranslation();
     return (
         <div>
             <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
