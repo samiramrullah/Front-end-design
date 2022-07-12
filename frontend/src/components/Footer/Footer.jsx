@@ -2,9 +2,16 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled, HomeFilled } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
+import { useState } from 'react';
 import './Footer.css'
 const Footer = () => {
     const { t } = useTranslation();
+    const [message,setmessage]=useState();
+    const[email,setemail]=useState();
+    const onSubmitHandler=(e)=>{
+            e.preventDefault();
+            console.log(message,email);
+    }
     return (
         <div>
             <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
@@ -39,12 +46,12 @@ const Footer = () => {
                             </div>
                             <div class="col-md-4 mb-5">
                                 <h5 class="text-primary mb-4">Have a Query?</h5>
-                                <form action="">
+                                <form onSubmit={onSubmitHandler}>
                                     <div class="form-group">
-                                        <input type="text" class="form-control border-0" placeholder="Text here" required="required" />
+                                        <input type="text" class="form-control border-0" placeholder="Text here" required="required" onChange={(e)=>setmessage(e.target.value)}/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" onChange={(e)=>setemail(e.target.value)} />
                                     </div>
                                     <div>
                                         <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Send Now</button>
