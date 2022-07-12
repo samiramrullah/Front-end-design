@@ -1,8 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled } from '@ant-design/icons';
+import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled, HomeFilled } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
-import LanguageSelect from '../Languages/Languages'
 import './Footer.css'
 const Footer = () => {
     const { t } = useTranslation();
@@ -18,24 +17,24 @@ const Footer = () => {
                         <div class="row">
                             <div class="col-md-4 mb-5">
                                 <h5 class="text-primary mb-4">Get In Touch</h5>
-                                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                                <p><i class="fa fa-map-marker-alt mr-2"></i>Sector-12 , Chandigarh, India</p>
+                                <p><i class="fa fa-phone-alt mr-2"></i>+91 904 1952237</p>
+                                <p><i class="fa fa-envelope mr-2"></i>samiramrullah@gmail.com</p>
                                 <div class="d-flex justify-content-start mt-4">
-                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><TwitterCircleFilled /></a>
-                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><LinkedinFilled /></a>
-                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><InstagramFilled /></a>
-                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="#" style={{ width: '36px', height: '36px' }}><FacebookFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="https://twitter.com/samiramrullah" target={'_blank'} style={{ width: '36px', height: '36px'}}><TwitterCircleFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="https://www.linkedin.com/in/samir-alam-52b59a12a/" target={'_blank'} style={{ width: '36px', height: '36px' }}><LinkedinFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="https://www.instagram.com/_beingsamir/" target={'_blank'} style={{ width: '36px', height: '36px' }}><InstagramFilled /></a>
+                                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" href="https://www.facebook.com/samiramrullah/" target={'_blank'} style={{ width: '36px', height: '36px' }}><FacebookFilled /></a>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-5">
                                 <h5 class="text-primary mb-4">Popular Links</h5>
                                 <div class="d-flex flex-column justify-content-start">
-                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
-                                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
-                                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                                    <NavLink to={'/'} class="text-white mb-2">Home</NavLink>
+                                    <NavLink to={'/about'} class="text-white mb-2" >About Us</NavLink>
+                                    <a class="text-white mb-2" href="#">Our Services</a>
+                                    <a class="text-white mb-2" href="#">Our Team</a>
+                                    <NavLink to={'/contact'} class="text-white">Contact Us</NavLink>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-5">
