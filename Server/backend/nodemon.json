@@ -1,6 +1,9 @@
 {
     "env":{
         "MONGOATLAS_PASSWORD":"R4vuN4iPkdxSrOK5",
-        "JWT_TOKEN_KEY":"thisismysecretkeyforjwt"
+        "JWT_TOKEN_KEY":"thisismysecretkeyforjwt",
+        "mailid":"jayj10137@gmail.com",
+        "password":"Demo@123"
     }
+    
 }
