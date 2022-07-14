@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled, HomeFilled } from '@ant-design/icons';
+import { FacebookFilled, TwitterCircleFilled, LinkedinFilled, InstagramFilled } from '@ant-design/icons';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
 import './Footer.css'
@@ -39,8 +39,8 @@ const Footer = () => {
                                 <div class="d-flex flex-column justify-content-start">
                                     <NavLink to={'/'} class="text-white mb-2">Home</NavLink>
                                     <NavLink to={'/about'} class="text-white mb-2" >About Us</NavLink>
-                                    <a class="text-white mb-2" href="#">Our Services</a>
-                                    <a class="text-white mb-2" href="#">Our Team</a>
+                                    <a class="text-white mb-2" href="https://twitter.com/samiramrullah">Our Services</a>
+                                    <a class="text-white mb-2" href="https://twitter.com/samiramrullah">Our Team</a>
                                     <NavLink to={'/contact'} class="text-white">Contact Us</NavLink>
                                 </div>
                             </div>
@@ -73,16 +73,16 @@ const Footer = () => {
                     <div class="col-md-6 text-center text-md-right">
                         <ul class="nav d-inline-flex">
                             <li class="nav-item">
-                                <a class="nav-link text-white py-0" href="#">Privacy</a>
+                                <a class="nav-link text-white py-0" href="https://twitter.com/samiramrullah">Privacy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white py-0" href="#">Terms</a>
+                                <a class="nav-link text-white py-0" href="https://twitter.com/samiramrullah">Terms</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white py-0" href="#">FAQs</a>
+                                <a class="nav-link text-white py-0" href="https://twitter.com/samiramrullah">FAQs</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white py-0" href="#">Help</a>
+                                <a class="nav-link text-white py-0" href="https://twitter.com/samiramrullah">Help</a>
                             </li>
                         </ul>
                     </div>

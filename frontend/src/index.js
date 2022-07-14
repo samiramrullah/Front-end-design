@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/Store";
 import { ConfigProvider } from "antd";
-import pt_PT from "antd/es/locale/fr_FR";
+import ar_EG from "antd/es/locale/fr_FR";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import "./index.css";
@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <ConfigProvider locale={pt_PT}>
+        <ConfigProvider locale={ar_EG}>
           <App />
         </ConfigProvider>
       </Provider>
