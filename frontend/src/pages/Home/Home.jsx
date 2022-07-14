@@ -50,15 +50,28 @@ const Home = () => {
     <HomeWrapper>
       <Divider orientation="left">Cred Adda</Divider>
       <Row>
-        <Col style={{backgroundColor:"red"}} flex={2}>
+        <Col style={{ backgroundColor: "red" }} flex={2}>
           <center><h3>Best way to send your money</h3>
-          <h3>Secure and Fast Transactions</h3>
+            <h3>Secure and Fast Transactions</h3>
           </center>
           <div id="StepsHeading">
             How To send your Money
           </div>
+          <Row >
+            <Col style={{width:"30%"}}>
+              Step 1
+              <br/>
+              Explain the steps
+            </Col>
+            <Col style={{width:"30%"}}>
+              Step 2
+            </Col>
+            <Col style={{width:"30%"}}>
+              Step 1
+            </Col>
+          </Row>
         </Col>
-        <Col style={{backgroundColor:"blue"}} flex={3}>3 / 5</Col>
+        <Col style={{ backgroundColor: "blue" }} flex={3}>3 / 5</Col>
       </Row>
 
     </HomeWrapper>
