@@ -58,19 +58,27 @@ const Home = () => {
             How To send your Money
           </div>
           <Row >
-            <Col style={{width:"30%"}}>
+            <Col style={{ width: "30%" }}>
               Step 1
-              <br/>
+              <br />
               Explain the steps
             </Col>
-            <Col style={{width:"30%"}}>
+            <Col style={{ width: "30%" }}>
               Step 2
             </Col>
-            <Col style={{width:"30%"}}>
+            <Col style={{ width: "30%" }}>
               Step 1
+            </Col>
+            <Col id='youtubelink'>
+              <iframe 
+              src="https://www.youtube.com/embed/ToUzPIAyui0" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
             </Col>
           </Row>
         </Col>
+
         <Col style={{ backgroundColor: "blue" }} flex={3}>3 / 5</Col>
       </Row>
 
