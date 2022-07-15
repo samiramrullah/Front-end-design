@@ -1,14 +1,14 @@
 import React from 'react';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Dropdown, Menu, message, Space } from 'antd';
+import { Button, Dropdown, Menu, message, Space,Row, Col, Input, Steps } from 'antd';
 import { IN, CA } from 'country-flag-icons/react/3x2';
-import { Row, Col, Input, Steps } from 'antd';
 import { useState } from 'react';
 import './SendCard.css'
 
 
 const SendCard = () => {
     const [step, setstep] = useState(0);
+    const [amountvalue,setamountvalue]=useState();
     const { TextArea } = Input;
     const { Step } = Steps;
     const handleMenuClick = (e) => {
@@ -57,7 +57,7 @@ const SendCard = () => {
             <h3>With Zero Cost</h3>
             <Row id='dropdownwrapper'>
                 <Col>
-                    <TextArea
+                    <TextArea onChange={(e)=>setamountvalue(e.target.value)}
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
@@ -96,7 +96,7 @@ const SendCard = () => {
                             minRows: 2,
                             maxRows: 6
                         }}
-                        value='12244'
+                        value={amountvalue}
                     />
                 </Col>
                 <Col>
