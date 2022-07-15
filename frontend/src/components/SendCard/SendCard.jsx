@@ -1,9 +1,100 @@
-import React from 'react'
+import React from 'react';
+import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Dropdown, Menu, message, Space } from 'antd';
+import { IN, CA } from 'country-flag-icons/react/3x2';
+import { Row, Col, Input, Steps } from 'antd';
+import { useState } from 'react';
+import './SendCard.css'
+
 
 const SendCard = () => {
-  return (
-    <div>SendCard</div>
-  )
+    const [step, setstep] = useState(0);
+    const { TextArea } = Input;
+    const { Step } = Steps;
+    const handleMenuClick = (e) => {
+        message.info('Click on menu item.');
+        console.log('click', e);
+    };
+
+    const menu = (
+        <Menu
+            onClick={handleMenuClick}
+            items={[
+                {
+                    label: <IN />,
+                    key: '1',
+                    icon: "INDIA",
+                },
+                {
+                    label: <CA />,
+                    key: '2',
+                    icon: "CANADA",
+                },
+            ]}
+        />
+    );
+    const ChangeStatus = () => {
+        if (step === 0) {
+            setstep(1);
+            return
+        }
+        else if (step === 1) {
+            setstep(2);
+            return;
+        }
+        else if (step === 2) {
+            setstep(3);
+            return
+        }
+        else if (step == 3) {
+            setstep(0);
+            return;
+        }
+    }
+    setTimeout(ChangeStatus, 5000);
+    return (
+        <>
+            <h3>With Zero Cost</h3>
+            <Row id='dropdownwrapper'>
+                <Col>
+                    <TextArea
+                        placeholder="Enter Amount"
+                        autoSize={{
+                            minRows: 2,
+                            maxRows: 6
+                        }}
+                    />
+                </Col>
+                <Col>
+                    <Space wrap>
+                        <Dropdown overlay={menu}>
+                            <Button>
+                                <Space>
+                                    Select Country
+                                    <DownOutlined />
+                                </Space>
+                            </Button>
+                        </Dropdown>
+                    </Space>
+                </Col>
+            </Row>
+            <Row>
+                <Col style={{ paddingTop: '12px' }}>
+                    <Steps direction="vertical" current={step}>
+                        <Step title="Step 1" description="This is a description." />
+                        <Step title="Step 2" description="This is a description." />
+                        <Step title="Step 3" description="This is a description." />
+                        <Step title="Congratulations" description="This is a description." />
+                    </Steps>
+                </Col>
+            </Row>
+            <Row>
+                <Col id='getstartedbtn'>
+                <Button value={'large'}>Get Started</Button>
+                </Col>
+            </Row>
+        </>
+    )
 }
 
 export default SendCard

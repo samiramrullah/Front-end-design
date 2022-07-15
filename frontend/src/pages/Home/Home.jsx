@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Col, Divider, Row } from "antd";
 import Services from '../../components/Services/Services';
 import './Home.css'
+import SendCard from '../../components/SendCard/SendCard';
 
 
 const Home = () => {
@@ -65,27 +66,27 @@ const Home = () => {
             </Col>
             <Col style={{ width: "30%" }}>
               Step 2
-              <br/>
+              <br />
               <p>Explain Second Step</p>
             </Col>
             <Col style={{ width: "30%" }}>
               Step 1
-              <br/>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Veniam nam ullam cupiditate, eum dolorum  <br/>doloribus dicta?Quia veritatis suscipit  <br/>consequatur fugit, sunt laudantium<br/> sint, culpa nesciunt eum <br/> voluptates optio aspernatur!</p>
+              <br />
+              <p>Explanation</p>
             </Col>
             <Col id='youtubelink'>
-              <iframe 
-              src="https://www.youtube.com/embed/ToUzPIAyui0" 
-              title="YouTube video player" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
+              <iframe
+                src="https://www.youtube.com/embed/ToUzPIAyui0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             </Col>
           </Row>
         </Col>
 
         <Col style={{ backgroundColor: "blue" }} flex={3}>
 
-          Card here
+          <SendCard />
         </Col>
       </Row>
 
