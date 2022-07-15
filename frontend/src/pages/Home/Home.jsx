@@ -48,7 +48,7 @@ const Home = () => {
   }
   return (
     <HomeWrapper>
-      <Divider orientation="left">Cred Adda</Divider>
+      <Divider orientation="center">Cred Adda</Divider>
       <Row>
         <Col style={{ backgroundColor: "red" }} flex={2}>
           <center><h3>Best way to send your money</h3>
@@ -65,9 +65,13 @@ const Home = () => {
             </Col>
             <Col style={{ width: "30%" }}>
               Step 2
+              <br/>
+              <p>Explain Second Step</p>
             </Col>
             <Col style={{ width: "30%" }}>
               Step 1
+              <br/>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Veniam nam ullam cupiditate, eum dolorum  <br/>doloribus dicta?Quia veritatis suscipit  <br/>consequatur fugit, sunt laudantium<br/> sint, culpa nesciunt eum <br/> voluptates optio aspernatur!</p>
             </Col>
             <Col id='youtubelink'>
               <iframe 
@@ -79,7 +83,10 @@ const Home = () => {
           </Row>
         </Col>
 
-        <Col style={{ backgroundColor: "blue" }} flex={3}>3 / 5</Col>
+        <Col style={{ backgroundColor: "blue" }} flex={3}>
+
+          Card here
+        </Col>
       </Row>
 
     </HomeWrapper>
