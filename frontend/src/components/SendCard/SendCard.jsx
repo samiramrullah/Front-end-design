@@ -54,7 +54,7 @@ const SendCard = () => {
     setTimeout(ChangeStatus, 5000);
     return (
         <>
-            <h3 style={{marginBottom:'1rem'}}>With Zero Cost</h3>
+            <h3 style={{ marginBottom: '1rem' }}>With Zero Cost</h3>
             <Row id='dropdownwrapper'>
                 <Col style={{ width: "55%" }}>
                     <TextArea onChange={(e) => setamountvalue(e.target.value)}
@@ -68,7 +68,7 @@ const SendCard = () => {
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button style={{ height: "53px" }}>
+                            <Button style={{ height: "55px" }}>
                                 <Space >
                                     Sender
                                     <DownOutlined />
@@ -78,15 +78,15 @@ const SendCard = () => {
                     </Space>
                 </Col>
             </Row>
-            <Row style={{marginLeft:'4rem',marginTop:'1rem',marginBottom:'1rem'}}>
+            <Row style={{ marginLeft: '4rem', marginTop: '1rem', marginBottom: '1rem' }}>
                 <Col style={{ paddingTop: '12px' }}>
                     <Steps direction="vertical" current={step}>
-                        <Step title="Step 1"  description="This is a description." />
-                        {step==0?(<hr style={{paddingLedt:'1rem'}}/>):null}
+                        <Step title="Step 1" description="This is a description." />
+                        {step == 0 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
                         <Step title="Step 2" description="This is a description." />
-                        {step==1?(<hr style={{paddingLedt:'1rem'}}/>):null}
+                        {step == 1 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
                         <Step title="Step 3" description="This is a description." />
-                        {step==2?(<hr style={{paddingLedt:'1rem'}}/>):null}
+                        {step == 2 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
                         <Step title="Congratulations" description="This is a description." />
                     </Steps>
                 </Col>
@@ -97,7 +97,7 @@ const SendCard = () => {
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
-                            maxRows: 6
+                            maxRows: 6,
                         }}
                         value={amountvalue}
                     />
@@ -105,9 +105,9 @@ const SendCard = () => {
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button style={{ height: "53px" }}>
-                                <Space>
-                                    Reciver
+                            <Button style={{ height: "55px" }}>
+                                <Space >
+                                    Sender
                                     <DownOutlined />
                                 </Space>
                             </Button>
