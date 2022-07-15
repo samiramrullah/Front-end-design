@@ -5,7 +5,7 @@ const Services = () => {
     const { Meta } = Card;
     return (
         <>
-            <Divider orientation="center">Our Services</Divider>
+            <Divider orientation="center" style={{paddingTop:'3rem',paddingBottom:'1rem'}}><h1>Our Services</h1></Divider>
             <Row id='servicesRow'>
                 <Col>
                     <Card

@@ -54,27 +54,31 @@ const Home = () => {
       <Divider orientation="center">Cred Adda</Divider>
       <Row>
         <Col  id='test' style={{ backgroundColor: "red" }} flex={2}>
-          <center><h3>Best way to send your money</h3>
+          <center><h2>Best way to send your money</h2>
             <h3>Secure and Fast Transactions</h3>
           </center>
           <div id="StepsHeading">
-            How To send your Money
+            <h3>How To send your Money</h3>
           </div>
           <Row >
             <Col style={{ width: "30%" }}>
               Step 1
               <br />
               Explain the steps
+              
+              Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae.
             </Col>
             <Col style={{ width: "30%" }}>
               Step 2
               <br />
               <p>Explain Second Step</p>
+              Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae.
             </Col>
             <Col style={{ width: "30%" }}>
-              Step 1
+              Step 3
               <br />
               <p>Explanation</p>
+              {/* Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae. */}
             </Col>
             <Col id='youtubelink'>
               <iframe
@@ -95,7 +99,7 @@ const Home = () => {
           <SendCard />
         </Col>
       </Row>
-      <Services />
+      <Services/>
     </HomeWrapper>
   )
 }

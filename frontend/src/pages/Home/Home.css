@@ -132,3 +132,6 @@
     height: 65%;
   }
 }
+.ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center {
+  margin-top: 50rem;
+}
