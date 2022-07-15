@@ -22,7 +22,6 @@
 } */
 
 #StepsHeading {
-  background-color: aqua;
   margin-top: 5% !important;
   text-align: center;
   align-items: center;
@@ -58,4 +57,7 @@
 
   border-radius: 105px;
   border-style: double;
+}
+#sencard{
+  margin-top: 5rem;
 }

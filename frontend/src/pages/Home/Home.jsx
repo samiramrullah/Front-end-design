@@ -3,10 +3,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
-import { Col, Divider, Row ,Button} from "antd";
+import { Col, Divider, Row, Button } from "antd";
 import Services from '../../components/Services/Services';
-import './Home.css'
+
 import SendCard from '../../components/SendCard/SendCard';
+import './Home.css'
 
 
 const Home = () => {
@@ -51,7 +52,7 @@ const Home = () => {
     <HomeWrapper>
       <Divider orientation="center">Cred Adda</Divider>
       <Row>
-        <Col style={{ backgroundColor: "red" }} flex={2}>
+        <Col  id='test' style={{ backgroundColor: "red" }} flex={2}>
           <center><h3>Best way to send your money</h3>
             <h3>Secure and Fast Transactions</h3>
           </center>
@@ -84,16 +85,16 @@ const Home = () => {
           </Row>
           <Row>
             <Col id='signupbtn'>
-            <Button    value={'large'}>Sign Up </Button>
+              <Button value={'large'}>Sign Up </Button>
             </Col>
           </Row>
         </Col>
 
-        <Col style={{ backgroundColor: "blue" }} flex={3}>
+        <Col style={{ backgroundColor: "blue" ,paddingTop:'3rem',paddingBottom:'3rem'}} flex={3}>
           <SendCard />
         </Col>
       </Row>
-
+      <Services />
     </HomeWrapper>
   )
 }

@@ -54,22 +54,22 @@ const SendCard = () => {
     setTimeout(ChangeStatus, 5000);
     return (
         <>
-            <h3>With Zero Cost</h3>
+            <h3 style={{marginBottom:'1rem'}}>With Zero Cost</h3>
             <Row id='dropdownwrapper'>
-                <Col>
+                <Col style={{ width: "55%" }}>
                     <TextArea onChange={(e) => setamountvalue(e.target.value)}
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
-                            maxRows: 6
+                            maxRows: 6,
                         }}
                     />
                 </Col>
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button>
-                                <Space>
+                            <Button style={{ height: "53px" }}>
+                                <Space >
                                     Sender
                                     <DownOutlined />
                                 </Space>
@@ -78,18 +78,21 @@ const SendCard = () => {
                     </Space>
                 </Col>
             </Row>
-            <Row>
+            <Row style={{marginLeft:'4rem',marginTop:'1rem',marginBottom:'1rem'}}>
                 <Col style={{ paddingTop: '12px' }}>
                     <Steps direction="vertical" current={step}>
-                        <Step title="Step 1" description="This is a description." />
+                        <Step title="Step 1"  description="This is a description." />
+                        {step==0?(<hr style={{paddingLedt:'1rem'}}/>):null}
                         <Step title="Step 2" description="This is a description." />
+                        {step==1?(<hr style={{paddingLedt:'1rem'}}/>):null}
                         <Step title="Step 3" description="This is a description." />
+                        {step==2?(<hr style={{paddingLedt:'1rem'}}/>):null}
                         <Step title="Congratulations" description="This is a description." />
                     </Steps>
                 </Col>
             </Row>
             <Row id='dropdownwrapper'>
-                <Col>
+                <Col style={{ width: "55%" }}>
                     <TextArea
                         placeholder="Enter Amount"
                         autoSize={{
@@ -102,7 +105,7 @@ const SendCard = () => {
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button>
+                            <Button style={{ height: "53px" }}>
                                 <Space>
                                     Reciver
                                     <DownOutlined />
@@ -112,11 +115,11 @@ const SendCard = () => {
                     </Space>
                 </Col>
             </Row>
-            <Row>
+            {/* <Row>
                 <Col id='getstartedbtn'>
                     <Button value={'large'}>Get Started</Button>
                 </Col>
-            </Row>
+            </Row> */}
         </>
     )
 }

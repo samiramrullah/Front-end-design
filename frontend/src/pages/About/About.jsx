@@ -8,11 +8,9 @@ const About = () => {
     navigate(-1)
   }
   return (
-    <>
+    <HomeWrapper>
       <div className="AboutMain">
-
         <div class="we-are-block">
-
           <div id="about-us-section">
             <button className='btn btn-light mt-1' onClick={backbuttonHandler}>Back</button>
             <div class="about-us-image">
@@ -23,9 +21,7 @@ const About = () => {
               <p>We make money transer easy, fast and smooth</p>
               <NavLink to={'/signup'} title="About Us Button">Connect With US</NavLink>
             </div>
-
           </div>
-
           <div id="history-section">
             <div class="history-image">
               <img src="https://thumbs.dreamstime.com/b/canada-indian-flag-hands-together-man-hand-beautiful-color-red-wonderful-place-126029930.jpg" width="951" height="471" alt="Building Pic" />
@@ -38,7 +34,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </>
+    </HomeWrapper>
   )
 }
 
