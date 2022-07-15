@@ -70,7 +70,7 @@ const SendCard = () => {
                         <Dropdown overlay={menu}>
                             <Button>
                                 <Space>
-                                    Select Country
+                                    Sender
                                     <DownOutlined />
                                 </Space>
                             </Button>
@@ -88,9 +88,33 @@ const SendCard = () => {
                     </Steps>
                 </Col>
             </Row>
+            <Row id='dropdownwrapper'>
+                <Col>
+                    <TextArea
+                        placeholder="Enter Amount"
+                        autoSize={{
+                            minRows: 2,
+                            maxRows: 6
+                        }}
+                        value='12244'
+                    />
+                </Col>
+                <Col>
+                    <Space wrap>
+                        <Dropdown overlay={menu}>
+                            <Button>
+                                <Space>
+                                    Reciver
+                                    <DownOutlined />
+                                </Space>
+                            </Button>
+                        </Dropdown>
+                    </Space>
+                </Col>
+            </Row>
             <Row>
                 <Col id='getstartedbtn'>
-                <Button value={'large'}>Get Started</Button>
+                    <Button value={'large'}>Get Started</Button>
                 </Col>
             </Row>
         </>

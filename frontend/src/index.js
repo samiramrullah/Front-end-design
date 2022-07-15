@@ -17,7 +17,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <ConfigProvider locale={ar_EG}>
-          <App />
+          <App style={{ fontfamily: "Times New Roman"}} />
         </ConfigProvider>
       </Provider>
     </BrowserRouter>
