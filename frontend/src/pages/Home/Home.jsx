@@ -1,9 +1,10 @@
 import HomeWrapper from '../../components/HomeWrapper';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,NavLink } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import { Col, Divider, Row, Button } from "antd";
+
 import Services from '../../components/Services/Services';
 
 import SendCard from '../../components/SendCard/SendCard';
@@ -83,9 +84,9 @@ const Home = () => {
                 allowfullscreen></iframe>
             </Col>
           </Row>
-          <Row>
+          <Row >
             <Col id='signupbtn'>
-              <Button value={'large'}>Sign Up </Button>
+            <NavLink to={'/signup'} title="Sign up">Sign Up</NavLink>
             </Col>
           </Row>
         </Col>
