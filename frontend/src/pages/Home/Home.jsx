@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
-import { Col, Divider, Row } from "antd";
+import { Col, Divider, Row ,Button} from "antd";
 import Services from '../../components/Services/Services';
 import './Home.css'
 import SendCard from '../../components/SendCard/SendCard';
@@ -82,10 +82,14 @@ const Home = () => {
                 allowfullscreen></iframe>
             </Col>
           </Row>
+          <Row>
+            <Col id='signupbtn'>
+            <Button    value={'large'}>Sign Up </Button>
+            </Col>
+          </Row>
         </Col>
 
         <Col style={{ backgroundColor: "blue" }} flex={3}>
-
           <SendCard />
         </Col>
       </Row>
