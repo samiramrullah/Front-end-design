@@ -28,3 +28,15 @@
   text-align: center;
   padding-top: 1rem;
 }
+
+.ant-input{
+  padding-top: 1rem !important;
+}
+.anticon svg {
+  display: inline-block;
+  margin-bottom: 0.6rem !important;
+}
+
+.ant-btn {
+  height: 66.5px !important;
+}

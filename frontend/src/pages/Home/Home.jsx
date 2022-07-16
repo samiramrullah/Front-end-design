@@ -4,9 +4,8 @@ import { useNavigate,NavLink } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import { Col, Divider, Row, Button } from "antd";
-
+import About from '../About/About';
 import Services from '../../components/Services/Services';
-
 import SendCard from '../../components/SendCard/SendCard';
 import './Home.css'
 
@@ -60,7 +59,7 @@ const Home = () => {
           <div id="StepsHeading">
             <h3>How To send your Money</h3>
           </div>
-          <Row >
+          <Row style={{paddingLeft:'0.5rem'}}>
             <Col style={{ width: "30%" }}>
               Step 1
               <br />
@@ -100,6 +99,7 @@ const Home = () => {
         </Col>
       </Row>
       <Services/>
+      <About/>
     </HomeWrapper>
   )
 }

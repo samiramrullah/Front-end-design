@@ -5,7 +5,6 @@ import { IN, CA } from 'country-flag-icons/react/3x2';
 import { useState } from 'react';
 import './SendCard.css'
 
-
 const SendCard = () => {
     const [step, setstep] = useState(0);
     const [amountvalue, setamountvalue] = useState();
@@ -21,12 +20,12 @@ const SendCard = () => {
             onClick={handleMenuClick}
             items={[
                 {
-                    label: <IN style={{ width: '2rem', margin: '5px' }} />,
+                    label: <IN style={{ width: '2rem', margin: '1rem' }} />,
                     key: '1',
                     icon: "INDIA",
                 },
                 {
-                    label: <CA style={{ width: '2rem', margin: '5px' }} />,
+                    label: <CA style={{ width: '2rem', margin: '1rem' }} />,
                     key: '2',
                     icon: "CANADA",
                 },
@@ -82,11 +81,11 @@ const SendCard = () => {
                 <Col style={{ paddingTop: '12px' }}>
                     <Steps direction="vertical" current={step}>
                         <Step title="Step 1" description="This is a description." />
-                        {step == 0 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
+                        {/* {step == 0 ? (<hr style={{ paddingLedt: '1rem' }} />) : null} */}
                         <Step title="Step 2" description="This is a description." />
-                        {step == 1 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
+                        {/* {step == 1 ? (<hr style={{ paddingLedt: '1rem' }} />) : null} */}
                         <Step title="Step 3" description="This is a description." />
-                        {step == 2 ? (<hr style={{ paddingLedt: '1rem' }} />) : null}
+                        {/* {step == 2 ? (<hr style={{ paddingLedt: '1rem' }} />) : null} */}
                         <Step title="Congratulations" description="This is a description." />
                     </Steps>
                 </Col>

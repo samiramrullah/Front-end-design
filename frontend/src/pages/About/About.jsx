@@ -8,13 +8,13 @@ const About = () => {
     navigate(-1)
   }
   return (
-    <HomeWrapper>
+    <>
       <div className="AboutMain">
         <div class="we-are-block">
           <div id="about-us-section">
             <button className='btn btn-light mt-1' onClick={backbuttonHandler}>Back</button>
             <div class="about-us-image">
-              <img src="https://wallpaperaccess.com/full/2675409.jpg" width="808" height="458" alt="Lobby Image" />
+              <img id='img'src="https://wallpaperaccess.com/full/2675409.jpg" width="808" height="458" alt="Lobby Image" />
             </div>
             <div class="about-us-info">
               <h2>Cred Adda</h2>
@@ -34,7 +34,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </HomeWrapper>
+    </>
   )
 }
 
