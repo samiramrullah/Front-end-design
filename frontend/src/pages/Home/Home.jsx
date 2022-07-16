@@ -1,6 +1,6 @@
 import HomeWrapper from '../../components/HomeWrapper';
 import axios from 'axios';
-import { useNavigate,NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useState } from 'react';
 import { Col, Divider, Row, Button } from "antd";
@@ -52,32 +52,36 @@ const Home = () => {
     <HomeWrapper>
       <Divider orientation="center">Cred Adda</Divider>
       <Row>
-        <Col  id='test' style={{ backgroundColor: "red" }} flex={2}>
+        <Col id='test' style={{ backgroundColor: "red" }} flex={2}>
           <center><h2>Best way to send your money</h2>
             <h3>Secure and Fast Transactions</h3>
           </center>
           <div id="StepsHeading">
             <h3>How To send your Money</h3>
           </div>
-          <Row style={{paddingLeft:'0.5rem'}}>
+          <Row style={{ paddingLeft: '0.5rem' }}>
             <Col style={{ width: "30%" }}>
               Step 1
               <br />
               Explain the steps
-              
-              Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae.
+              <p>Do this sjahsjasa</p>
+              <p>Than that</p>
             </Col>
             <Col style={{ width: "30%" }}>
               Step 2
               <br />
               <p>Explain Second Step</p>
-              Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae.
+              <p>Do this sjahsjasa</p>
+              <p>Than that</p>
             </Col>
             <Col style={{ width: "30%" }}>
               Step 3
               <br />
               <p>Explanation</p>
               {/* Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.<br /> Corrupti distinctio facilis tenetur<br /> sapiente incidunt ea. Necessitatibus<br /> porro facere dicta odit? Repellat recusandae <br />facilis sit aliquam minus rerum <br />dolore quam molestiae. */}
+            </Col>
+            <Col id='signupbtn'>
+              <NavLink to={'/signup'} title="Sign up">Get Stated</NavLink>
             </Col>
             <Col id='youtubelink'>
               <iframe
@@ -87,19 +91,17 @@ const Home = () => {
                 allowfullscreen></iframe>
             </Col>
           </Row>
-          <Row >
-            <Col id='signupbtn'>
-            <NavLink to={'/signup'} title="Sign up">Sign Up</NavLink>
-            </Col>
-          </Row>
+          {/* <Row >
+            
+          </Row> */}
         </Col>
 
-        <Col style={{ backgroundColor: "blue" ,paddingTop:'3rem',paddingBottom:'3rem'}} flex={3}>
+        <Col style={{ backgroundColor: "blue", paddingTop: '3rem', paddingBottom: '3rem' }} flex={3}>
           <SendCard />
         </Col>
       </Row>
-      <Services/>
-      <About/>
+      <Services />
+      <About />
     </HomeWrapper>
   )
 }
