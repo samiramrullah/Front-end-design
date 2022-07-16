@@ -6,8 +6,6 @@ import './Signin.css'
 
 const Signup = () => {
   const naviate = useNavigate();
-
-
   const onFinish = (values) => {
     console.log('Success:', values);
     axios.post('http://localhost:5000/users/signup', values)
@@ -23,7 +21,7 @@ const Signup = () => {
     <HomeWrapper>
       <Row>
         <Col style={{ width: '50%' }}>
-          <Divider orientation="center">Sign Up</Divider>
+          <Divider orientation="center"><h2>WELCOME</h2></Divider>
           <Form
             id='signupForm'
             layout="vertical"
@@ -49,6 +47,7 @@ const Signup = () => {
                 {
                   required: true,
                   message: 'Please input your First Name',
+                  type:'string'
                 },
               ]}
             >
@@ -108,9 +107,16 @@ const Signup = () => {
               name="remember"
               valuePropName="checked"
               wrapperCol={{
-                offset: 8,
+                offset: -1,
                 span: 16,
               }}
+              required
+              rules={[
+                {
+                  required:true,
+                  message:'Please Check this field to proceed'
+                }
+              ]}
             >
               <Checkbox>Remember me</Checkbox>
             </Form.Item>
@@ -126,7 +132,6 @@ const Signup = () => {
               </Button>
             </Form.Item>
           </Form>
-
         </Col>
         <Col id='signupimage'></Col>
       </Row>

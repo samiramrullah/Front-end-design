@@ -1,0 +1,11 @@
+#signinImage{
+  background-image: url('https://wallpaperaccess.com/full/2675409.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+}
+#loginForm{
+    margin-top: 2rem !important;
+    width: 60%;
+    margin-left: 20% !important;
+}

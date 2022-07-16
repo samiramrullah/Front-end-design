@@ -1,5 +1,4 @@
 import React from 'react'
-import HomeWrapper from '../../components/HomeWrapper';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './About.css';
 const About = () => {
