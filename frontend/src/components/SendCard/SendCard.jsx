@@ -56,7 +56,7 @@ const SendCard = () => {
             <h3 style={{ marginBottom: '1rem' }}>With Zero Cost</h3>
             <Row id='dropdownwrapper'>
                 <Col style={{ width: "55%" }}>
-                    <TextArea onChange={(e) => setamountvalue(e.target.value)}
+                    <TextArea id='text_area' onChange={(e) => setamountvalue(e.target.value)}
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
