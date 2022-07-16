@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import HomeWrapper from '../../components/HomeWrapper';
+import { Col, Row } from 'antd';
 import './Signin.css'
 
 const Signup = () => {
@@ -42,27 +43,27 @@ const Signup = () => {
               <form onSubmit={onSubmitHandler}>
                 <div class="mb-3">
                   <label>Fist Name</label>
-                  <input type={'text'} class="form-control" required  onChange={(e)=>setfirstName(e.target.value)}/>
+                  <input type={'text'} class="form-control" required onChange={(e) => setfirstName(e.target.value)} />
                 </div>
                 <div class="mb-3">
                   <label>Last Name</label>
-                  <input type="email" class="form-control"  onChange={(e)=>setlastName(e.target.value)}/>
+                  <input type="text" class="form-control" onChange={(e) => setlastName(e.target.value)} />
                 </div>
                 <div class="mb-3">
                   <label>Contact Number</label>
-                  <input type={'text'} class="form-control" required onChange={(e)=>setphoneNumber(e.target.value)}/>
+                  <input type={'text'} class="form-control" required onChange={(e) => setphoneNumber(e.target.value)} />
                 </div>
                 <div class="mb-3">
                   <label>Email address</label>
-                  <input type="email" class="form-control" required onChange={(e)=>setemail(e.target.value)} />
+                  <input type="email" class="form-control" required onChange={(e) => setemail(e.target.value)} />
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" required  onChange={(e)=>setpassword(e.target.value)}/>
+                  <input type="password" class="form-control" required onChange={(e) => setpassword(e.target.value)} />
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                  <input type="password" class="form-control" required  onChange={(e)=>setcnfpassword(e.target.value)}/>
+                  <input type="password" class="form-control" required onChange={(e) => setcnfpassword(e.target.value)} />
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1" />
