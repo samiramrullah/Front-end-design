@@ -52,7 +52,7 @@ const Home = () => {
     <HomeWrapper>
       <Divider orientation="center">Cred Adda</Divider>
       <Row>
-        <Col id='test' style={{ backgroundColor: "red" }} flex={2}>
+        <Col id='test'  flex={2}>
           <center><h2>Best way to send your money</h2>
             <h3>Secure and Fast Transactions</h3>
           </center>

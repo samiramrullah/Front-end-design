@@ -5,6 +5,7 @@ import { IN, CA } from 'country-flag-icons/react/3x2';
 import { useState } from 'react';
 import './SendCard.css'
 
+
 const SendCard = () => {
     const [step, setstep] = useState(0);
     const [amountvalue, setamountvalue] = useState();
@@ -56,7 +57,7 @@ const SendCard = () => {
             <h3 style={{ marginBottom: '1rem' }}>With Zero Cost</h3>
             <Row id='dropdownwrapper'>
                 <Col style={{ width: "55%" }}>
-                    <TextArea id='text_area' onChange={(e) => setamountvalue(e.target.value)}
+                    <TextArea className='text_area' onChange={(e) => setamountvalue(e.target.value)}
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
@@ -67,7 +68,7 @@ const SendCard = () => {
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button style={{ height: "55px" }}>
+                            <Button className='signup_btn'>
                                 <Space >
                                     Sender
                                     <DownOutlined />
@@ -92,7 +93,7 @@ const SendCard = () => {
             </Row>
             <Row id='dropdownwrapper'>
                 <Col style={{ width: "55%" }}>
-                    <TextArea
+                    <TextArea className='text_area'
                         placeholder="Enter Amount"
                         autoSize={{
                             minRows: 2,
@@ -104,7 +105,7 @@ const SendCard = () => {
                 <Col>
                     <Space wrap>
                         <Dropdown overlay={menu}>
-                            <Button style={{ height: "55px" }}>
+                            <Button className='signup_btn'>
                                 <Space >
                                     Sender
                                     <DownOutlined />

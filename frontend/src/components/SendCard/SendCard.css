@@ -19,17 +19,18 @@
 #getstartedbtn:hover {
   background-color: rgb(87, 194, 87);
 }
-#text_area {
-  height: 54px;
+.text_area {
   min-height: 54px;
   max-height: 142px;
   overflow-y: hidden;
   resize: none;
   text-align: center;
   padding-top: 1rem;
+  background-color: red;
+  height: 67px !important;
 }
 
-#text_area {
+.text_area {
   padding-top: 1rem !important;
 }
 .anticon svg {
@@ -37,6 +38,6 @@
   margin-bottom: 0.6rem !important;
 }
 
-.ant-btn {
+.signup_btn {
   height: 66.5px !important;
 }

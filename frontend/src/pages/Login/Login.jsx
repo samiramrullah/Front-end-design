@@ -1,13 +1,13 @@
-import { useNavigate,NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import HomeWrapper from '../../components/HomeWrapper';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Row, Col, Button, Checkbox, Form, Input } from 'antd';
 import './Login.css'
+
 const Login = () => {
   const naviate = useNavigate();
   let jwttoken;
-
   const onFinish = (values) => {
     axios.post('http://localhost:5000/users/login', values)
       .then(res => {

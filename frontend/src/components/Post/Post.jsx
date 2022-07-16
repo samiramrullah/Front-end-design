@@ -6,6 +6,7 @@ import Infocard from '../../utils/Helpers/Infocard';
 import { useSelector, useDispatch } from 'react-redux';
 import { setpostStatus } from '../../redux/PostSlice'
 import { DollarCircleOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import ConfirmModal from '../../utils/Helpers/ConfirmModal';
 
 const Post = () => {
     const [countryToSend, setcountryToSend] = useState();

@@ -1,10 +1,16 @@
 import axios from "axios";
 import { Card } from "antd";
 import { Button } from "antd";
+import ConfirmModal from "./ConfirmModal";
+import {setdeleteStatus} from '../../redux/ProfileSlice';
+import {useDispatch,useSelector} from 'react-redux';
 import "./PostCard.css";
 
 const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId }) => {
+  const dispatch=useDispatch();
+  const isdeletetrue=useSelector((state)=>state.profile.deleteStatus)
   const deletePost = () => {
+    dispatch(setdeleteStatus(true));
     var token = localStorage.userToken;
     const userData = {
       postId
@@ -17,6 +23,7 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
       .then((res => alert("Deleted Successfully")))
       .catch(err => console.log(err))
   };
+  console.log(isdeletetrue);
   return (
     <div className="site-card-border-less-wrapper">
       <Card
@@ -26,6 +33,7 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
           width: 300,
         }}
       >
+        {isdeletetrue&&<ConfirmModal/>}
         <h3>Post Details</h3>
         <div className="row">
           Posted Data

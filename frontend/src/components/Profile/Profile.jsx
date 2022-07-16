@@ -3,9 +3,12 @@ import { useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { useState } from "react";
+import { Card, Row, Col } from 'antd';
+import { Button } from 'antd';
+const { Meta } = Card;
 const Post = () => {
-    const [data,setdata]=useState();
-    useEffect(()=>{
+    const [data, setdata] = useState();
+    useEffect(() => {
         var token = localStorage.userToken;
         var decoded = jwt_decode(token);
         var userId = decoded.userId;
@@ -17,30 +20,65 @@ const Post = () => {
             'Authorization': `bearer ${token}`
         }
         axios.post('http://localhost:5000/post/userinfo', userData, { headers: headers })
-            .then((res =>setdata(res.data)))
+            .then((res => setdata(res.data)))
             .catch(err => console.log(err))
-    },[])
-    console.log(data);
+    }, [])
     return (
         <div>
-            <center>
-                <div class="card" style={{ width: '18rem' }}>
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWgb_52c3pYUdxPNcwk0YRU2FdcE3kjOWBxw&usqp=CAU" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Name: <span>Samir Alam</span></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </center>
+            <Card
+                hoverable
+                style={{
+                    width: 300,
+                }}
+                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+                <Meta title="Samir Alam" />
+
+                <Row style={{ marginTop: '0.5rem' }}>
+                    <Col>
+                        Name :
+                    </Col>
+                    <Col style={{ paddingLeft: '1rem' }}>
+                        Samir Alam
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        Email :
+                    </Col>
+                    <Col style={{ paddingLeft: '1rem' }}>
+                        samiramrullah@gmail
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        Address :
+                    </Col>
+                    <Col style={{ paddingLeft: '1rem' }}>
+                        Sector-12 , Chandigarh, 160012, India.
+                    </Col>
+                </Row>
+                <Row style={{ justifyContent: 'space-evenly' }}>
+                    <Col style={{ borderBox: "25px" }}>
+                        <Button type="primary" size='small'>
+                            Update
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button type="primary" size='small'>
+                            Delete
+                        </Button>
+                    </Col>
+                </Row>
+            </Card>
             <center className="row mt-5">
-                {Array.isArray(data)?(
-                    data?.map(itm=>(
+                {Array.isArray(data) ? (
+                    data?.map(itm => (
                         <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
                     ))
-                ):null}
-                
-                
+                ) : null}
+
+
             </center>
         </div>
     )
