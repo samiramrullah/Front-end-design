@@ -3,10 +3,21 @@ import { useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { useState } from "react";
-import { Card, Row, Col } from 'antd';
-import { Button } from 'antd';
+import { Card, Row, Col, Button, Upload } from 'antd';
+import { UploadOutlined } from "@ant-design/icons";
 const { Meta } = Card;
 const Post = () => {
+    const props = {
+        action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
+
+        onChange({ file, fileList }) {
+            if (file.status !== "uploading") {
+                console.log(file, fileList);
+            }
+        }
+    };
+
+
     const [data, setdata] = useState();
     useEffect(() => {
         var token = localStorage.userToken;
@@ -30,11 +41,17 @@ const Post = () => {
                 style={{
                     width: 300,
                 }}
+
                 cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+
             >
+                <Upload {...props}>
+                    <Button style={{ top: "-4rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button>
+                </Upload>
                 <Meta title="Samir Alam" />
 
                 <Row style={{ marginTop: '0.5rem' }}>
+
                     <Col>
                         Name :
                     </Col>
