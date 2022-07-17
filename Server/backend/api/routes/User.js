@@ -73,7 +73,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.patch('/update',upload.single('UserImage'),(req,res,next)=>{
-
+        
 })
 
 router.post("/login", (req, res, next) => {
