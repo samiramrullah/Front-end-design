@@ -5,6 +5,18 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserSchema = require("../../models/User");
 const { token } = require("morgan");
+const multer =require('multer');
+
+var storage =multer.diskStorage({
+  destination:function(req,file,cb){
+    cb(null,"./usersImage");
+  },
+  filename:function(req,res,cb){
+    cb(null,file.orignalname)
+  }
+});
+var upload=multer({storage:storage})
+
 router.post("/signup", (req, res, next) => {
   UserSchema.find({ email: req.body.email })
     .exec()
@@ -59,6 +71,10 @@ router.post("/signup", (req, res, next) => {
       .catch((err) => res.body.json({ error: err }));
   });
 });
+
+router.patch('/update',upload.single('UserImage'),(req,res,next)=>{
+
+})
 
 router.post("/login", (req, res, next) => {
   UserSchema.find({ email: req.body.email })
