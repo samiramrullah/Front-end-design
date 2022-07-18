@@ -5,18 +5,9 @@ import jwt_decode from "jwt-decode";
 import { useState } from "react";
 import { Card, Row, Col, Button } from 'antd';
 import { UploadOutlined } from "@ant-design/icons";
+import './Profile.css'
 const { Meta } = Card;
 const Post = () => {
-    // const props = {
-    //     action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-
-    //     onChange({ file, fileList }) {
-    //         if (file.status !== "uploading") {
-    //             console.log(file, fileList);
-    //         }
-    //     }
-    // };
-
     const [data, setdata] = useState();
     const [userInfo, setuserInfo] = useState();
     const [profleImage, setProfileImage] = useState();
@@ -41,67 +32,29 @@ const Post = () => {
     const ImageHandler = (e) => {
         console.log(e.target.files[0]);
     }
-    console.log(userInfo);
+    const Updatehandler = () => {
+
+    }
     return (
         <div>
-            <Card
-                hoverable
-                style={{
-                    width: 300,
-                }}
-
-                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-
-            >
-                {/* <Upload {...props}> */}
-                <input type={'file'} onChange={ImageHandler} />
-
-                {/* <Button style={{ top: "-4rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button> */}
-                {/* </Upload> */}
-                <Meta title="Info" />
-
-                <Row style={{ marginTop: '0.5rem' }}>
-
-                    <Col>
-                        Name :
-                    </Col>
-                    <Col style={{ paddingLeft: '1rem' }}>
-                        {userInfo && (<p>{userInfo.firstName}</p>)}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        Email :
-                    </Col>
-                    <Col style={{ paddingLeft: '1rem' }}>
-                    {userInfo && (<p>{userInfo.email}</p>)}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        Address :
-                    </Col>
-                    <Col style={{ paddingLeft: '1rem' }}>
-                        {userInfo&& Object.keys(userInfo).includes('address') ? (
-                            <p>{userInfo.address}</p>
-                        ) : (
-                            <p>No Address</p>
-                        )}
-                    </Col>
-                </Row>
-                <Row style={{ justifyContent: 'space-evenly' }}>
-                    <Col style={{ borderBox: "25px" }}>
-                        <Button type="primary" size='small'>
-                            Update
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button type="primary" size='small'>
-                            Delete
-                        </Button>
-                    </Col>
-                </Row>
-            </Card>
+            <Row style={{ width: '60%', marginLeft: '40%' }}>
+                <Col >
+                    <Card
+                        hoverable
+                        style={{
+                            width: 300,
+                        }}
+                        cover={<img alt="example" src="https://uploads.concordia.net/2020/06/12162037/Samir-Ibrahim.jpeg" height="100%" />}
+                    >
+                        {/* <Meta title="Info" /> */}
+                        <Button style={{ top: "-1rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button>
+                    </Card>
+                </Col>
+                {/* <Row >
+                 <Col >Name</Col>
+                 <Col style={{marginLeft:'3rem'}}>Samir</Col>
+                </Row> */}
+            </Row>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
                     data?.map(itm => (
