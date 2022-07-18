@@ -72,8 +72,16 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.patch('/update',upload.single('UserImage'),(req,res,next)=>{
-        
+// upload.single('UserImage')
+router.patch('/:userId',async(req,res,next)=>{
+    console.log(req.body);
+   try {
+    const userId=req.params.userId;
+    const updateUser=await UserSchema.findByIdAndUpdate({_id:userId},req.body,{new:true});
+    res.send(updateUser)
+  } catch (error) {
+    res.status(401).send("Error Occured")
+  }
 })
 
 router.post("/login", (req, res, next) => {

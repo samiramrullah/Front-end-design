@@ -13,7 +13,6 @@ import axios from 'axios';
 import './Dashboard.css'
 const { Header, Content, Footer, Sider } = Layout;
 
-
 const Dashboard = () => {
 
   const naviate = useNavigate();
