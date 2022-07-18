@@ -123,6 +123,5 @@ const FormModal = ({ isModalVisible, showModalHandler, setIsModalVisible }) => {
             </Modal>
         </>
     )
-}
-
+} 
 export default FormModal

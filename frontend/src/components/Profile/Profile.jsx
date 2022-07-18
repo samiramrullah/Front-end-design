@@ -50,7 +50,7 @@ const Post = () => {
                         cover={<img alt="example" src="https://uploads.concordia.net/2020/06/12162037/Samir-Ibrahim.jpeg" height="100%" />}
                     >
                         {/* <Meta title="Info" /> */}
-                        <Button onClick={showModalHandler} style={{ top: "-1rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button>
+                        <Button onClick={showModalHandler} style={{ left: "12.56rem" }} icon={<UploadOutlined />}>Upload</Button>
                     </Card>
                 </Col>
             </Row>
@@ -77,7 +77,7 @@ const Post = () => {
                 <Col style={{ marginLeft: '1rem' }}>
                     {userInfo && (
                         (Object.keys(userInfo)).includes('address') ? (
-                            <p>With addredd</p>
+                            <p>{userInfo.address}</p>
                         ) : (
                             <p>No address</p>
                         )
