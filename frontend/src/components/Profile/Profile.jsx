@@ -5,12 +5,12 @@ import jwt_decode from "jwt-decode";
 import { useState } from "react";
 import { Card, Row, Col, Button } from 'antd';
 import { UploadOutlined } from "@ant-design/icons";
+import FormModal from '../Modals/FormModal';
 import './Profile.css'
-const { Meta } = Card;
 const Post = () => {
     const [data, setdata] = useState();
     const [userInfo, setuserInfo] = useState();
-    const [profleImage, setProfileImage] = useState();
+    const [isModalVisible, setIsModalVisible] = useState(false);
     useEffect(() => {
         var token = localStorage.userToken;
         var decoded = jwt_decode(token);
@@ -29,11 +29,14 @@ const Post = () => {
             .then((res) => setuserInfo(res.data))
             .catch(err => console.log(err))
     }, [])
-    const ImageHandler = (e) => {
-        console.log(e.target.files[0]);
-    }
-    const Updatehandler = () => {
+    // const ImageHandler = (e) => {
+    //     console.log(e.target.files[0]);
+    // }
+    // const Updatehandler = () => {
 
+    // }
+    const showModalHandler = () => {
+        setIsModalVisible(true);
     }
     return (
         <div>
@@ -47,13 +50,39 @@ const Post = () => {
                         cover={<img alt="example" src="https://uploads.concordia.net/2020/06/12162037/Samir-Ibrahim.jpeg" height="100%" />}
                     >
                         {/* <Meta title="Info" /> */}
-                        <Button style={{ top: "-1rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button>
+                        <Button onClick={showModalHandler} style={{ top: "-1rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button>
                     </Card>
                 </Col>
-                {/* <Row >
-                 <Col >Name</Col>
-                 <Col style={{marginLeft:'3rem'}}>Samir</Col>
-                </Row> */}
+            </Row>
+            <Row style={{ marginLeft: '40%', paddingTop: '2rem' }}>
+                <Col >Name</Col>
+                <Col style={{ marginLeft: '1rem' }}>
+                    {userInfo && (<p>{userInfo.firstName} {userInfo.lastName}</p>)}
+                </Col>
+            </Row>
+            <Row style={{ marginLeft: '40%' }}>
+                <Col >Email</Col>
+                <Col style={{ marginLeft: '1rem' }}>
+                    {userInfo && (<p>{userInfo.email}</p>)}
+                </Col>
+            </Row>
+            <Row style={{ marginLeft: '40%' }}>
+                <Col >Contact Number</Col>
+                <Col style={{ marginLeft: '1rem' }}>
+                    {userInfo && (<p>{userInfo.phoneNumber}</p>)}
+                </Col>
+            </Row>
+            <Row style={{ marginLeft: '40%' }}>
+                <Col >Address</Col>
+                <Col style={{ marginLeft: '1rem' }}>
+                    {userInfo && (
+                        (Object.keys(userInfo)).includes('address') ? (
+                            <p>With addredd</p>
+                        ) : (
+                            <p>No address</p>
+                        )
+                    )}
+                </Col>
             </Row>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
@@ -62,6 +91,7 @@ const Post = () => {
                     ))
                 ) : null}
             </center>
+            <FormModal isModalVisible={isModalVisible} showModalHandler={showModalHandler} setIsModalVisible={setIsModalVisible} />
         </div>
     )
 }

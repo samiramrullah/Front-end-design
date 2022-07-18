@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const UserSchema = require("../../models/User");
 const { token } = require("morgan");
 const multer = require("multer");
+const checkAuth=require('./CheckAuth')
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -73,9 +74,11 @@ router.post("/signup", (req, res, next) => {
 });
 
 // upload.single('UserImage')
-router.patch("/:userId", async (req, res, next) => {
+router.post("/:userId", async (req, res, next) => {
+  console.log('here');
   try {
     const userId = req.params.userId;
+    console.log(req.body);
     const updateUser = await UserSchema.findByIdAndUpdate(
       { _id: userId },
       req.body,
