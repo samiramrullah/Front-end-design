@@ -16,10 +16,10 @@ const Post = () => {
     //         }
     //     }
     // };
-    
+
     const [data, setdata] = useState();
-    const [userInfo,setuserInfo]=useState();
-    const [profleImage,setProfileImage]=useState();
+    const [userInfo, setuserInfo] = useState();
+    const [profleImage, setProfileImage] = useState();
     useEffect(() => {
         var token = localStorage.userToken;
         var decoded = jwt_decode(token);
@@ -34,14 +34,14 @@ const Post = () => {
         axios.post('http://localhost:5000/post/userinfo', userData, { headers: headers })
             .then((res => setdata(res.data)))
             .catch(err => console.log(err))
-        axios.get(`http://localhost:5000/users/${userId}`,{headers:headers})
-        .then((res)=>setuserInfo(res.data))
-        .catch(err=>console.log(err))
+        axios.get(`http://localhost:5000/users/${userId}`, { headers: headers })
+            .then((res) => setuserInfo(res.data))
+            .catch(err => console.log(err))
     }, [])
-    const ImageHandler=(e)=>{
+    const ImageHandler = (e) => {
         console.log(e.target.files[0]);
-     }
-     console.log(userInfo);
+    }
+    console.log(userInfo);
     return (
         <div>
             <Card
@@ -54,8 +54,8 @@ const Post = () => {
 
             >
                 {/* <Upload {...props}> */}
-                <input type={'file'} onChange={ImageHandler}/>
-               
+                <input type={'file'} onChange={ImageHandler} />
+
                 {/* <Button style={{ top: "-4rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button> */}
                 {/* </Upload> */}
                 <Meta title="Info" />
@@ -66,7 +66,7 @@ const Post = () => {
                         Name :
                     </Col>
                     <Col style={{ paddingLeft: '1rem' }}>
-                        {userInfo&&(<p>{userInfo.firstName}</p>)}
+                        {userInfo && (<p>{userInfo.firstName}</p>)}
                     </Col>
                 </Row>
                 <Row>
@@ -74,7 +74,7 @@ const Post = () => {
                         Email :
                     </Col>
                     <Col style={{ paddingLeft: '1rem' }}>
-                    {userInfo&&(<p>{userInfo.email}</p>)}
+                    {userInfo && (<p>{userInfo.email}</p>)}
                     </Col>
                 </Row>
                 <Row>
@@ -82,7 +82,11 @@ const Post = () => {
                         Address :
                     </Col>
                     <Col style={{ paddingLeft: '1rem' }}>
-                        Sector-12 , Chandigarh, 160012, India.
+                        {userInfo&& Object.keys(userInfo).includes('address') ? (
+                            <p>{userInfo.address}</p>
+                        ) : (
+                            <p>No Address</p>
+                        )}
                     </Col>
                 </Row>
                 <Row style={{ justifyContent: 'space-evenly' }}>
@@ -104,8 +108,6 @@ const Post = () => {
                         <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
                     ))
                 ) : null}
-
-
             </center>
         </div>
     )

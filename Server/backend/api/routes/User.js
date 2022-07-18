@@ -91,7 +91,7 @@ router.get("/:userId", async (req, res, next) => {
   try {
     const id = req.params.userId;
     UserSchema.findById(id)
-      .select("firstName lastName email phoneNumber")
+      .select("firstName lastName email phoneNumber address")
       .exec()
       .then((docs) => {
         res.status(200).json(docs);
