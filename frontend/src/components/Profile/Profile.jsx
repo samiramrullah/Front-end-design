@@ -18,6 +18,7 @@ const Post = () => {
     // };
     
     const [data, setdata] = useState();
+    const [userInfo,setuserInfo]=useState();
     const [profleImage,setProfileImage]=useState();
     useEffect(() => {
         var token = localStorage.userToken;
@@ -33,11 +34,14 @@ const Post = () => {
         axios.post('http://localhost:5000/post/userinfo', userData, { headers: headers })
             .then((res => setdata(res.data)))
             .catch(err => console.log(err))
+        axios.get(`http://localhost:5000/users/${userId}`,{headers:headers})
+        .then((res)=>setuserInfo(res.data))
+        .catch(err=>console.log(err))
     }, [])
     const ImageHandler=(e)=>{
         console.log(e.target.files[0]);
      }
-
+     console.log(userInfo);
     return (
         <div>
             <Card
@@ -54,7 +58,7 @@ const Post = () => {
                
                 {/* <Button style={{ top: "-4rem", right: "-11rem" }} icon={<UploadOutlined />}>Upload</Button> */}
                 {/* </Upload> */}
-                <Meta title="Samir Alam" />
+                <Meta title="Info" />
 
                 <Row style={{ marginTop: '0.5rem' }}>
 
@@ -62,7 +66,7 @@ const Post = () => {
                         Name :
                     </Col>
                     <Col style={{ paddingLeft: '1rem' }}>
-                        Samir Alam
+                        {userInfo&&(<p>{userInfo.firstName}</p>)}
                     </Col>
                 </Row>
                 <Row>
@@ -70,7 +74,7 @@ const Post = () => {
                         Email :
                     </Col>
                     <Col style={{ paddingLeft: '1rem' }}>
-                        samiramrullah@gmail
+                    {userInfo&&(<p>{userInfo.email}</p>)}
                     </Col>
                 </Row>
                 <Row>

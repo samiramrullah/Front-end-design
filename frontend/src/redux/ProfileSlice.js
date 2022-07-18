@@ -5,6 +5,7 @@ const ProfileSlice = createSlice({
   initialState: {
     showmodel:false,
     deleteStatus: false,
+    data:[],
   },
   reducers: {
     setdeleteStatus(state, action) {

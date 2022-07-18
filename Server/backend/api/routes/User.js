@@ -5,17 +5,17 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserSchema = require("../../models/User");
 const { token } = require("morgan");
-const multer =require('multer');
+const multer = require("multer");
 
-var storage =multer.diskStorage({
-  destination:function(req,file,cb){
-    cb(null,"./usersImage");
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./usersImage");
   },
-  filename:function(req,res,cb){
-    cb(null,file.orignalname)
-  }
+  filename: function (req, res, cb) {
+    cb(null, file.orignalname);
+  },
 });
-var upload=multer({storage:storage})
+var upload = multer({ storage: storage });
 
 router.post("/signup", (req, res, next) => {
   UserSchema.find({ email: req.body.email })
@@ -73,16 +73,40 @@ router.post("/signup", (req, res, next) => {
 });
 
 // upload.single('UserImage')
-router.patch('/:userId',async(req,res,next)=>{
-    console.log(req.body);
-   try {
-    const userId=req.params.userId;
-    const updateUser=await UserSchema.findByIdAndUpdate({_id:userId},req.body,{new:true});
-    res.send(updateUser)
+router.patch("/:userId", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const updateUser = await UserSchema.findByIdAndUpdate(
+      { _id: userId },
+      req.body,
+      { new: true }
+    );
+    res.send(updateUser);
   } catch (error) {
-    res.status(401).send("Error Occured")
+    res.status(401).send("Error Occured");
   }
-})
+});
+
+router.get("/:userId", async (req, res, next) => {
+  try {
+    const id = req.params.userId;
+    UserSchema.findById(id)
+      .select("firstName lastName email phoneNumber")
+      .exec()
+      .then((docs) => {
+        res.status(200).json(docs);
+      })
+      .catch((err) => {
+        res.status(200).json({
+          error: err,
+        });
+      });
+  } catch (error) {
+    res.status(400).json({
+      message:'Error in fetching data'
+    })
+  }
+});
 
 router.post("/login", (req, res, next) => {
   UserSchema.find({ email: req.body.email })

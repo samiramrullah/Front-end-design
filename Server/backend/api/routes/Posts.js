@@ -36,7 +36,7 @@ router.post("/userinfo", checkAuth, (req, res, next) => {
     postSchema
       .find({ userID: userid })
       .select("countryToSend countryToRecieve amount datetime")
-      .populate("countryToSend", "countryToRecieve")
+      .populate("userID")
       .exec()
       .then((result) => res.status(200).json(result))
       .catch((err) => res.status(400).json(err));
