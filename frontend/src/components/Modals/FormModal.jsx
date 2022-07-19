@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal, Button, Form, Input } from 'antd';
 import jwt_decode from 'jwt-decode';
 import axios from 'axios';
-const FormModal = ({ isModalVisible, showModalHandler, setIsModalVisible }) => {
+const FormModal = ({ isModalVisible, setIsModalVisible }) => {
 
     const handleOk = () => {
         setIsModalVisible(false)
@@ -20,7 +20,7 @@ const FormModal = ({ isModalVisible, showModalHandler, setIsModalVisible }) => {
             'Authorization': `bearer ${token}`
         }
         axios.post(`http://localhost:5000/users/${userId}`, values, { headers: headers })
-            .then((res) => alert('Data Updated Successfully'))
+            .then((res) => alert('Data Updated Successfully'),setIsModalVisible(false))
             .catch(err => console.log(err))
     };
 

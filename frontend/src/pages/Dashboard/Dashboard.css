@@ -5,8 +5,8 @@
   }
   
   .site-layout .site-layout-background {
-    background: #fff;
+    background: azure !important;
   }
     [data-theme="dark"] .site-layout .site-layout-background {
-      background: #141414;
+      background: azure !important;
     }

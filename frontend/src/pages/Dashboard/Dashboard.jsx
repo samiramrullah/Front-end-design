@@ -39,6 +39,7 @@ const Dashboard = () => {
         <Layout
           style={{
             minHeight: '100vh',
+            backgroundColor:`azure` 
           }}
         >
           <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>

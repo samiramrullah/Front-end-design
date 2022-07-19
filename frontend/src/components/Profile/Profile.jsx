@@ -28,6 +28,19 @@ const Post = () => {
         axios.get(`http://localhost:5000/users/${userId}`, { headers: headers })
             .then((res) => setuserInfo(res.data))
             .catch(err => console.log(err))
+
+            // fetch(`http://localhost:5000/users/${userId}`, {
+            //     method: 'PATCH',
+            //     body: JSON.stringify({
+            //       title: 'foo',
+            //     }),
+            //     headers: {
+            //       headers
+            //     },
+            //   })
+            //     .then((response) => setuserInfo(res.data))
+            //     .then((json) => console.log(json));
+
     }, [])
     // const ImageHandler = (e) => {
     //     console.log(e.target.files[0]);
