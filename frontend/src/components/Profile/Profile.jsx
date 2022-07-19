@@ -30,7 +30,7 @@ const Post = () => {
             .then((res) => setuserInfo(res.data))
             .catch(err => console.log(err))
     }, [])
-    
+
     const showModalHandler = () => {
         setIsModalVisible(true);
     }
@@ -90,9 +90,9 @@ const Post = () => {
                             <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
                         ))
                     ) : (
-                       <Empty/>
+                        <Empty />
                     )
-                ) : <Empty/>}
+                ) : <Empty />}
             </center>
             <FormModal isModalVisible={isModalVisible} showModalHandler={showModalHandler} setIsModalVisible={setIsModalVisible} />
         </div>
