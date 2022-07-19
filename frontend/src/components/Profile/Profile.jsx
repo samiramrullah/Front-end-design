@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { useState } from "react";
-import { Card, Row, Col, Button } from 'antd';
+import { Card, Row, Col, Button, Divider } from 'antd';
 import { UploadOutlined } from "@ant-design/icons";
 import FormModal from '../Modals/FormModal';
 import './Profile.css'
@@ -97,6 +97,7 @@ const Post = () => {
                     )}
                 </Col>
             </Row>
+            <Divider orientation="center">Posts</Divider>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
                     
