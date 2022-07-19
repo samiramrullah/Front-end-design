@@ -1,19 +1,21 @@
-import React from 'react'
-import { Modal,Space } from 'antd';
+import React from 'react';
+import { Modal } from 'antd';
 
+const SuccessModel = ({ isModalVisible, setIsModalVisible }) => {
 
-const success = () => {
-    Modal.success({
-        content: 'some messages...some messages...',
-    });
-};
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
 
-const SuccessModel = ({showmodel,setshowmodel}) => {
-    // const [showmodel,setshowmodel]=useState(true);
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
     return (
-        <Space wrap>
-           {showmodel&&success()}
-        </Space>
+        <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     )
 }
 

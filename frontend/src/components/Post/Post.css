@@ -1,0 +1,44 @@
+.ant-divider-inner-text {
+  color: white !important;
+}
+
+#postcard {
+  color: white !important;
+}
+.ant-card-head-title {
+  color: white !important;
+}
+#conversionFlagInd {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#conversionFlagCND {
+  width: 60%;
+  margin-left: 55%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#conversionarrow{
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+ 
+.dropdownPostSend{
+    width: 13.5rem !important;
+    height: 3.5rem !important;
+    margin-left: 33%;
+}
+.dropdownPostRecieve{
+    width: 13.5rem !important;
+    height: 3.5rem !important;
+    margin-left: 60%;
+}
+#amountInput{
+    height: 100% !important;
+    width: 63%;
+    margin-left: 20%;
+}

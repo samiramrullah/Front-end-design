@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined} from '@ant-design/icons';
 import { Button, Dropdown, Menu, message, Space, Row, Col, Input, Steps } from 'antd';
 import { IN, CA } from 'country-flag-icons/react/3x2';
 import { useState } from 'react';
@@ -46,7 +46,7 @@ const SendCard = () => {
             setstep(3);
             return
         }
-        else if (step == 3) {
+        else if (step === 3) {
             setstep(0);
             return;
         }
