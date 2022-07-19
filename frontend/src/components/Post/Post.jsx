@@ -2,11 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
-// import Infocard from '../../utils/Helpers/Infocard';
-import { useSelector, useDispatch } from 'react-redux';
-import { setpostStatus } from '../../redux/PostSlice'
 import { DollarCircleOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import ConfirmModal from '../../utils/Helpers/ConfirmModal';
 import SuccessModel from '../Modals/SuccessModel';
 
 const Post = () => {
@@ -14,8 +10,6 @@ const Post = () => {
     const [countryToRecieve, setcountryToRecieve] = useState();
     const [amount, setamount] = useState();
     const [showmodel,setshowmodel]=useState(false);
-    const postStatus = useSelector((state) => state.post.postStatus)
-    const dispatch = useDispatch();
     const onSubmitHandler = (e) => {
         e.preventDefault();
         var token = localStorage.userToken;

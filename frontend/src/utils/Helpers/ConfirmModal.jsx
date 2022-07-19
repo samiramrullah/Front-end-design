@@ -1,12 +1,10 @@
 import React from 'react';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
-import { useDispatch } from 'react-redux';
-import {setdeleteStatus} from '../../redux/ProfileSlice';
+
 const { confirm } = Modal;
 
 const ConfirmModal = ({showmodel,setshowConfirmModel}) => {
-    const dispatch=useDispatch();
     const showDeleteConfirm = () => {
         confirm({
             title: 'Are you sure delete this task?',

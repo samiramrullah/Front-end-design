@@ -1,14 +1,11 @@
-import axios from "axios";
 import { Card, Row, Col, Divider } from "antd";
 import { Button } from "antd";
 import DeleteModel from "../../components/Modals/DeleteModel";
 import { useState } from "react";
-import { setdeleteStatus } from '../../redux/ProfileSlice';
-import { useDispatch } from 'react-redux';
+
 import "./PostCard.css";
 
 const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId }) => {
-  const dispatch = useDispatch();
   const [isModalVisible,setIsModalVisible]=useState(false)
   
   const showModelhandler=()=>{ 
