@@ -6,17 +6,17 @@ const jwt = require("jsonwebtoken");
 const UserSchema = require("../../models/User");
 const { token } = require("morgan");
 const multer = require("multer");
-const checkAuth=require('./CheckAuth')
+const checkAuth = require("./CheckAuth");
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./usersImage");
-  },
-  filename: function (req, res, cb) {
-    cb(null, file.orignalname);
-  },
-});
-var upload = multer({ storage: storage });
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./usersImage");
+//   },
+//   filename: function (req, res, cb) {
+//     cb(null, file.orignalname);
+//   },
+// });
+// var upload = multer({ storage: storage });
 
 router.post("/signup", (req, res, next) => {
   UserSchema.find({ email: req.body.email })
@@ -74,20 +74,6 @@ router.post("/signup", (req, res, next) => {
 });
 
 // upload.single('UserImage')
-router.post("/:userId", async (req, res, next) => {
-  try {
-    const userId = req.params.userId;
-    console.log(req.body);
-    const updateUser = await UserSchema.findByIdAndUpdate(
-      { _id: userId },
-      req.body,
-      { new: true }
-    );
-    res.send(updateUser);
-  } catch (error) {
-    res.status(401).send("Error Occured");
-  }
-});
 
 router.get("/:userId", async (req, res, next) => {
   try {
@@ -105,8 +91,8 @@ router.get("/:userId", async (req, res, next) => {
       });
   } catch (error) {
     res.status(400).json({
-      message:'Error in fetching data'
-    })
+      message: "Error in fetching data",
+    });
   }
 });
 
@@ -153,4 +139,18 @@ router.post("/login", (req, res, next) => {
     });
 });
 
+router.post("/:userId", async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    console.log(req.body);
+    const updateUser = await UserSchema.findByIdAndUpdate(
+      { _id: userId },
+      req.body,
+      { new: true }
+    );
+    res.send(updateUser);
+  } catch (error) {
+    res.status(401).send("Error Occured");
+  }
+});
 module.exports = router;

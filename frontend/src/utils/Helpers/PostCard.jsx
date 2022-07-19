@@ -13,12 +13,14 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
   }
   return (
     <>
-      <Card
+      <Card id="postCard"
         title={"Post Id: " + postId}
-        bordered={false}
+        bordered={true}
         style={{
           width: 400,
           paddingBottom: '1rem',
+          borderColor:'#002140',
+          borderStyle:'1 px solid #002140'
         }}
       >
         <Divider orientation="center"><p>Date: {dateTime}</p></Divider>

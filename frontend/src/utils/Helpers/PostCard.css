@@ -5,3 +5,14 @@
 [data-theme="dark"] .site-card-border-less-wrapper {
   background: #303030;
 }
+
+#postCard {
+   margin-top: 1rem !important;
+}
+.ant-card-head{
+  background-color: #002140 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: white !important;
+}
