@@ -11,7 +11,7 @@ import Profile from '../../components/Profile/Profile';
 import Login from '../../pages/Login/Login';
 import axios from 'axios';
 import './Dashboard.css'
-const { Header, Content, Footer, Sider } = Layout;
+const {Content, Footer, Sider } = Layout;
 
 const Dashboard = () => {
 
@@ -73,13 +73,13 @@ const Dashboard = () => {
             </Menu>
           </Sider>
           <Layout className="site-layout">
-            <Header
+            {/* <Header
               className="site-layout-background"
               style={{
                 padding: 0,
               }}
 
-            > <h3 style={{ textAlign: 'center' }}>User Name</h3></Header>
+            ></Header> */}
             <Content
               style={{
                 margin: '0 16px',

@@ -80,7 +80,7 @@ const Post = () => {
     return (
         <div className="site-card-border-less-wrapper">
             <Card id='postcard'
-                title={<Divider orientation='center'>Swift Conversion </Divider>}
+                title={<Divider orientation='center'><p id='postHeader'>Swift Conversion</p> </Divider>}
                 bordered={false}
                 style={{
                     width: '100%',

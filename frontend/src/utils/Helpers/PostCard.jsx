@@ -21,7 +21,8 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
           paddingBottom: '1rem',
           borderColor:'#002140',
           borderStyle:'1 px solid #002140',
-          color:'black'
+          color:'black',
+          marginTop:'1rem'
         }}
       >
         <Divider id='postDivider' orientation="center"><p>Date: {dateTime}</p></Divider>

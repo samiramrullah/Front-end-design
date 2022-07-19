@@ -80,7 +80,7 @@ const Post = () => {
                     )}
                 </Col>
             </Row>
-            <Divider orientation="center">Posts</Divider>
+            <Divider className="postText" orientation="center">Posts</Divider>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
 
