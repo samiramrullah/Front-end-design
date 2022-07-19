@@ -75,7 +75,6 @@ router.post("/signup", (req, res, next) => {
 
 // upload.single('UserImage')
 router.post("/:userId", async (req, res, next) => {
-  console.log('here');
   try {
     const userId = req.params.userId;
     console.log(req.body);
