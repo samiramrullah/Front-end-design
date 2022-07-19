@@ -43,12 +43,21 @@ router.post("/userinfo", checkAuth, (req, res, next) => {
     res.status(400).json({ Error: "Invalid Credentials" });
   }
 });
-router.post("/updatebyId/:postId", (req, res, next) => {
+router.post("/updatebyId/:postId", async (req, res, next) => {
   try {
     const postId = req.params.postId;
+    const fn = (obj) =>
+      Object.fromEntries(
+        Object.entries(obj).filter(([, v]) => v !== null) || v !== "undifined"
+      );
+    const filterdata = fn(req.body);
+    const updatedPost = await postSchema.findByIdAndUpdate(
+      { _id: postId },
+      filterdata
+    );
     res.status(200).json({
-      message: "Update by Id",
-      postId: postId,
+      message: "Post Updated Successfully",
+      postId: updatedPost,
     });
   } catch (error) {
     res.status(400).json({
