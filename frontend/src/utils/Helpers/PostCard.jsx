@@ -23,7 +23,7 @@ const PostCard = ({ countryToSend, countryToRecieve, amount, dateTime, postId })
           borderStyle:'1 px solid #002140'
         }}
       >
-        <Divider orientation="center"><p>Date: {dateTime}</p></Divider>
+        <Divider id='postDivider' orientation="center"><p>Date: {dateTime}</p></Divider>
         <Row>
           <Col style={{ width: '50%', textAlign: 'center' }}>
             Send to

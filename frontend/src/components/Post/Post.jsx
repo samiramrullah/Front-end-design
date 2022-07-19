@@ -142,6 +142,11 @@ const Post = () => {
 
                     </Col>
                 </Row>
+                <Row>
+                    <Col style={{width:'100%',marginLeft:'40%'}}>
+                    <Button  style={{width:'35%'}} size='large'>Post</Button>
+                    </Col>
+                </Row>
             </Card>
         </div>
     )

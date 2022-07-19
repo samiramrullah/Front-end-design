@@ -16,3 +16,9 @@
   padding: 0 !important;
   color: white !important;
 }
+#postDivider{
+  color: black !important;
+}
+.ant-divider-inner-text{
+  color: black !important;
+}
