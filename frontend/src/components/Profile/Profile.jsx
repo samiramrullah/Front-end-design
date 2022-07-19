@@ -4,8 +4,9 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { useState } from "react";
 import { Card, Row, Col, Button, Divider } from 'antd';
-import { UploadOutlined } from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
 import FormModal from '../Modals/FormModal';
+import { Empty } from 'antd';
 import './Profile.css'
 const Post = () => {
     const [data, setdata] = useState();
@@ -28,26 +29,8 @@ const Post = () => {
         axios.get(`http://localhost:5000/users/${userId}`, { headers: headers })
             .then((res) => setuserInfo(res.data))
             .catch(err => console.log(err))
-
-            // fetch(`http://localhost:5000/users/${userId}`, {
-            //     method: 'PATCH',
-            //     body: JSON.stringify({
-            //       title: 'foo',
-            //     }),
-            //     headers: {
-            //       headers
-            //     },
-            //   })
-            //     .then((response) => setuserInfo(res.data))
-            //     .then((json) => console.log(json));
-
     }, [])
-    // const ImageHandler = (e) => {
-    //     console.log(e.target.files[0]);
-    // }
-    // const Updatehandler = () => {
-
-    // }
+    
     const showModalHandler = () => {
         setIsModalVisible(true);
     }
@@ -63,7 +46,7 @@ const Post = () => {
                         cover={<img alt="example" src="https://uploads.concordia.net/2020/06/12162037/Samir-Ibrahim.jpeg" height="100%" />}
                     >
                         {/* <Meta title="Info" /> */}
-                        <Button onClick={showModalHandler} style={{ left: "12.56rem" }} icon={<UploadOutlined />}>Upload</Button>
+                        <Button onClick={showModalHandler} style={{ left: "12.56rem" }} icon={<EditOutlined />}>Edit</Button>
                     </Card>
                 </Col>
             </Row>
@@ -100,12 +83,16 @@ const Post = () => {
             <Divider orientation="center">Posts</Divider>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
-                    
-                    data?.map(itm => (
-                        
-                        <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
-                    ))
-                ) : null}
+
+                    data.length > 0 ? (
+                        data?.map(itm => (
+
+                            <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
+                        ))
+                    ) : (
+                       <Empty/>
+                    )
+                ) : <Empty/>}
             </center>
             <FormModal isModalVisible={isModalVisible} showModalHandler={showModalHandler} setIsModalVisible={setIsModalVisible} />
         </div>

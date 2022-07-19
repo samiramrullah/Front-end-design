@@ -29,7 +29,7 @@ const FormModal = ({ isModalVisible, setIsModalVisible }) => {
     };
     return (
         <>
-            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="Update Profile" style={{textAlign:'center'}} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Form
                     layout="vertical"
                     name="basic"
@@ -107,6 +107,20 @@ const FormModal = ({ isModalVisible, setIsModalVisible }) => {
                         ]}
                     >
                         <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Profile Image"
+                        name="image"
+                        rules={[
+                            {
+                                required: false,
+                                message: 'Please input your address',
+                                type:'image'
+                            },
+                        ]}
+                    >
+                       <Input/>
                     </Form.Item>
 
                     <Form.Item
