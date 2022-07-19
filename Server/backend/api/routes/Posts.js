@@ -4,17 +4,17 @@ const mongoose = require("mongoose");
 const checkAuth = require("../../middleware/check-auth");
 const postSchema = require("../../models/Posts");
 router.post("/", checkAuth, (req, res, next) => {
-  let date = new Date().toUTCString();
-  date = String(date);
-  console.log(date);
-  const newpost = new postSchema({
-    countryToSend: req.body.countryToSend,
-    countryToRecieve: req.body.countryToRecieve,
-    amount: req.body.amount,
-    userID: req.body.userId,
-    datetime: date,
-  });
   try {
+    console.log(req.body.amount);
+    let date = new Date().toUTCString();
+    date = String(date);
+    const newpost = new postSchema({
+      countryToSend: req.body.countryToSend,
+      countryToRecieve: req.body.countryToRecieve,
+      amount: req.body.amount,
+      userID: req.body.userId,
+      datetime: date,
+    });
     newpost
       .save()
       .then((result) => {
@@ -25,9 +25,16 @@ router.post("/", checkAuth, (req, res, next) => {
       message: "POSTED",
       newpost,
     });
-  } catch (err) {
+  } catch (error) {
     res.status(500).json({ error: err });
   }
+
+  // console.log(date);
+
+//   try {
+//   } catch (err) {
+    
+//   }
 });
 router.post("/userinfo", checkAuth, (req, res, next) => {
   try {

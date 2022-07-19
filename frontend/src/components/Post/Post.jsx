@@ -1,49 +1,38 @@
 import React from 'react'
 import { useState } from 'react';
-import jwt_decode from "jwt-decode";
-import axios from 'axios';
-import { ArrowRightOutlined } from '@ant-design/icons';
 import { IN, CA } from 'country-flag-icons/react/3x2';
 import SuccessModel from '../Modals/SuccessModel';
 import { Row, Col, Card, Divider, Menu, Space, Dropdown, Button, Input } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import Arrow from '../../assets/Image/arrow.png'
+import Arrow from '../../assets/Image/arrow.png';
 import './Post.css'
 
 const Post = () => {
     const [countryToSend, setcountryToSend] = useState();
     const [countryToRecieve, setcountryToRecieve] = useState();
     const [amount, setamount] = useState();
-    const [isModalVisible, setisModalVisible] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const [sendFlag, setsendFlag] = useState();
     const [recieveFlag, setrecieveFlag] = useState();
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-        var token = localStorage.userToken;
-        var decoded = jwt_decode(token);
-        var userId = decoded.userId;
-        const userData = {
-            countryToSend,
-            countryToRecieve,
-            amount,
-            userId
-        };
-        const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': `bearer ${token}`
-        }
-
-        axios.post('http://localhost:5000/post', userData, { headers: headers })
-            .then((res => setisModalVisible(true)))
-            .catch(err => console.log(err))
-    }
-
 
     const handleMenuClickSend = (e) => {
         setsendFlag(e.key)
+        if (e.key === '1') {
+            setcountryToSend('India')
+        }
+        else if (e.key === '2') {
+            setcountryToSend('Canada')
+        }
     };
     const handleMenuClick = (e) => {
         setrecieveFlag(e.key);
+        if (e.key === '1') {
+            setcountryToRecieve('India')
+            console.log(countryToRecieve);
+        }
+        else if (e.key === '2') {
+            setcountryToRecieve('Canada')
+        }
     };
     const menuSend = (
         <Menu
@@ -80,7 +69,14 @@ const Post = () => {
         />
     );
 
-    console.log(sendFlag, 'sendFlagsendFlagsendFlag');
+    const postTransactions = () => {
+        if (!amount) {
+            alert('Please Select Amount')
+        }
+        else {
+            setIsModalVisible(true)
+        }
+    }
     return (
         <div className="site-card-border-less-wrapper">
             <Card id='postcard'
@@ -111,7 +107,7 @@ const Post = () => {
                         )}
                     </Col>
                 </Row>
-                <Row style={{marginBottom:'2%'}}>
+                <Row style={{ marginBottom: '2%' }}>
                     <Col style={{ width: '33%', background: 'red' }} >
                         <Space wrap >
                             <Dropdown overlay={menuSend}  >
@@ -125,10 +121,9 @@ const Post = () => {
                         </Space>
                     </Col>
                     <Col style={{ width: '33%', background: 'red' }} >
-                        <Input id='amountInput' placeholder='Amount'/>
-
+                        <Input id='amountInput' placeholder='Amount' onChange={(e) => setamount(e.target.value)} />
                     </Col>
-                    <Col style={{width:'33%',float:'right'}}>
+                    <Col style={{ width: '33%', float: 'right' }}>
                         <Space wrap>
                             <Dropdown overlay={menu}>
                                 <Button className='dropdownPostRecieve'>
@@ -143,11 +138,12 @@ const Post = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col style={{width:'100%',marginLeft:'40%'}}>
-                    <Button  style={{width:'35%'}} size='large'>Post</Button>
+                    <Col style={{ width: '100%', marginLeft: '40%' }}>
+                        <Button onClick={postTransactions} style={{ width: '35%' }} size='large'>Post</Button>
                     </Col>
                 </Row>
             </Card>
+            <SuccessModel isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} countryToRecieve={countryToRecieve} countryToSend={countryToSend} amount={amount} />
         </div>
     )
 }
