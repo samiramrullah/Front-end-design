@@ -12,7 +12,6 @@ const SuccessModel = ({ isModalVisible, setIsModalVisible, countryToSend, countr
         <p>Ooops!!!</p>
         <p>Something Went Wrong</p>
     </>
-
     const [displaytext, setdisplaytext] = useState(initalText)
 
     const handleOk = () => {
