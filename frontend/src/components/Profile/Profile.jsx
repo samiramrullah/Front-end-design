@@ -86,7 +86,9 @@ const Post = () => {
             </Row>
             <center className="row mt-5">
                 {Array.isArray(data) ? (
+                    
                     data?.map(itm => (
+                        
                         <div className="col"><PostCard countryToSend={itm.countryToSend} countryToRecieve={itm.countryToRecieve} amount={itm.amount} dateTime={itm.datetime} postId={itm._id} /></div>
                     ))
                 ) : null}
@@ -95,5 +97,4 @@ const Post = () => {
         </div>
     )
 }
-
 export default Post;

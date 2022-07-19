@@ -18,7 +18,7 @@ const FormModal = ({ isModalVisible, showModalHandler, setIsModalVisible }) => {
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': `bearer ${token}`
-        }       
+        }
         axios.post(`http://localhost:5000/users/${userId}`, values, { headers: headers })
             .then((res) => alert('Data Updated Successfully'))
             .catch(err => console.log(err))
@@ -123,5 +123,5 @@ const FormModal = ({ isModalVisible, showModalHandler, setIsModalVisible }) => {
             </Modal>
         </>
     )
-} 
+}
 export default FormModal

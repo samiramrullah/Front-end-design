@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import {setdeleteStatus} from '../../redux/ProfileSlice';
 const { confirm } = Modal;
 
-const ConfirmModal = () => {
+const ConfirmModal = ({showmodel,setshowConfirmModel}) => {
     const dispatch=useDispatch();
     const showDeleteConfirm = () => {
         confirm({
@@ -18,16 +18,18 @@ const ConfirmModal = () => {
 
             onOk() {
                 console.log('OK');
-                dispatch(setdeleteStatus(true));
+                setshowConfirmModel(false)
+                
             },
 
             onCancel() {
-                dispatch(setdeleteStatus(false))
+                setshowConfirmModel(false)
             },
         });
     };
+console.log(showmodel);
     return (
-        <div>{(showDeleteConfirm())}</div>
+        <div>{showmodel&&(showDeleteConfirm())}</div>
     )
 }
 

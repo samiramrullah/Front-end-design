@@ -89,7 +89,7 @@ const Dashboard = () => {
                 style={{
                   padding: 24,
                   minHeight: 600,
-
+                  
                 }}
               >
                 <Routes>
