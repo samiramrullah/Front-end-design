@@ -14,7 +14,6 @@ router.post("/", checkAuth, (req, res, next) => {
     userID: req.body.userId,
     datetime: date,
   });
-  console.log(date);
   try {
     newpost
       .save()
@@ -41,8 +40,20 @@ router.post("/userinfo", checkAuth, (req, res, next) => {
       .then((result) => res.status(200).json(result))
       .catch((err) => res.status(400).json(err));
   } catch (error) {
-    console.log("here");
     res.status(400).json({ Error: "Invalid Credentials" });
+  }
+});
+router.post("/updatebyId/:postId", (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    res.status(200).json({
+      message: "Update by Id",
+      postId: postId,
+    });
+  } catch (error) {
+    res.status(400).json({
+      Error: "Something Went Wrong",
+    });
   }
 });
 router.post("/deletepost", checkAuth, (req, res, next) => {
