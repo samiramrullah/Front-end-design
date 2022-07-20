@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { IN, CA } from 'country-flag-icons/react/3x2';
-import SuccessModel from '../Modals/SuccessModel';
+import SuccessModel from '../../utils/Modals/SuccessModel'
 import { Row, Col, Card, Divider, Menu, Space, Dropdown, Button, Input } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import Arrow from '../../assets/Image/arrow.png';

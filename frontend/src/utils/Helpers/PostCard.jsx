@@ -1,6 +1,6 @@
 import { Card, Row, Col, Divider } from "antd";
 import { Button } from "antd";
-import DeleteModel from "../../components/Modals/DeleteModel";
+import DeleteModel from "../Modals/DeleteModel";
 import { useState } from "react";
 
 import "./PostCard.css";

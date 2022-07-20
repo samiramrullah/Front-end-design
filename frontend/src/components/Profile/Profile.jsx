@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 import { useState } from "react";
 import { Card, Row, Col, Button, Divider } from 'antd';
 import { EditOutlined } from "@ant-design/icons";
-import FormModal from '../Modals/FormModal';
+import FormModal from '../../utils/Modals/FormModal';
 import { Empty } from 'antd';
 import './Profile.css'
 const Post = () => {
