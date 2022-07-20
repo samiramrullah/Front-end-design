@@ -1,10 +1,11 @@
 import React from 'react'
 import HomeWrapper from '../../components/HomeWrapper';
-import { Row, Col } from 'antd';
+import { Row, Col, Input } from 'antd';
+import './Contact.css'
 const Contact = () => {
   return (
     <HomeWrapper>
-      <Row style={{ width: '100%' }}>
+      <Row style={{ width: '100%', marginTop: '5%' }}>
         <Col style={{ width: '50%' }}>
           <h1>Always for your services</h1>
           <p>Fell Free to react us</p>
@@ -13,7 +14,14 @@ const Contact = () => {
           <p>160012, Chandigarh, India</p>
           <p>+91 9041952237</p>
         </Col>
-        <Col style={{ width: '50%' }}>Contact us Form
+        <Col style={{ width: '25%' }}>
+          <Input className='namefieldContactus' placeholder='Name' />
+        </Col>
+        <Col style={{ width: '25%' }}>
+          <Input className='namefieldContactus' placeholder='Email' type={'email'} />
+        </Col>
+        <Col>
+          Input Filed
         </Col>
       </Row>
       <Row>
