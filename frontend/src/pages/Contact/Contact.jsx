@@ -17,11 +17,11 @@ const Contact = () => {
 
         <Col style={{ width: '50%',marginBottom:'2rem' }}>
           <Row>
-            <Col style={{ width: '50%' }}>
+            <Col style={{ width: '40%' }}>
               <Input placeholder='Name' className='namefieldContactus' />
             </Col>
             <Col style={{ width: '50%' }}>
-              <Input placeholder='Email' className='namefieldContactus' type={'email'} />
+              <Input placeholder='Email' className='emailfieldContactus' type={'email'} />
             </Col>
           </Row>
           <Row style={{ marginTop: '2rem', height: '100%' }}>
