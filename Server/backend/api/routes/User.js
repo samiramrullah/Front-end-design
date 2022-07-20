@@ -139,7 +139,7 @@ router.post("/login", (req, res, next) => {
     });
 });
 
-router.post("/:userId", async (req, res, next) => {
+router.post("/updateuserbyId/:userId", async (req, res, next) => {
   try {
     const userId = req.params.userId;
     console.log(req.body);

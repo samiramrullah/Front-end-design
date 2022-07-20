@@ -19,7 +19,7 @@ const FormModal = ({ isModalVisible, setIsModalVisible }) => {
             'Content-Type': 'application/json',
             'Authorization': `bearer ${token}`
         }
-        axios.post(`http://localhost:5000/users/${userId}`, values, { headers: headers })
+        axios.post(`http://localhost:5000/users/updateuserbyId/${userId}`, values, { headers: headers })
             .then((res) => alert('Data Updated Successfully'),setIsModalVisible(false))
             .catch(err => console.log(err))
     };
