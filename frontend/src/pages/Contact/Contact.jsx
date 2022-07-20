@@ -1,12 +1,12 @@
 import React from 'react'
 import HomeWrapper from '../../components/HomeWrapper';
-import { Row, Col, Input } from 'antd';
+import { Row, Col, Input, Button } from 'antd';
 import './Contact.css'
 const Contact = () => {
   return (
     <HomeWrapper>
-      <Row style={{ width: '100%', marginTop: '5%' }}>
-        <Col style={{ width: '50%' }}>
+      <Row style={{ width: '100%', marginTop: '5%' ,marginLeft:'10%' }}>
+        <Col style={{ width: '50%', backgroundColor: 'red' }}>
           <h1>Always for your services</h1>
           <p>Fell Free to react us</p>
           <h2>India</h2>
@@ -14,14 +14,24 @@ const Contact = () => {
           <p>160012, Chandigarh, India</p>
           <p>+91 9041952237</p>
         </Col>
-        <Col style={{ width: '25%' }}>
-          <Input className='namefieldContactus' placeholder='Name' />
-        </Col>
-        <Col style={{ width: '25%' }}>
-          <Input className='namefieldContactus' placeholder='Email' type={'email'} />
-        </Col>
-        <Col>
-          Input Filed
+
+        <Col style={{ width: '50%',marginBottom:'2rem' }}>
+          <Row>
+            <Col style={{ width: '50%' }}>
+              <Input placeholder='Name' className='namefieldContactus' />
+            </Col>
+            <Col style={{ width: '50%' }}>
+              <Input placeholder='Email' className='namefieldContactus' type={'email'} />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: '2rem', height: '100%' }}>
+            <Col style={{ width: '100%' }}>
+              <Input id='messageInput' size="large" placeholder='Please Enter your message' />
+            </Col>
+            <Col>
+              <Button size='large' id='sendBtnContact'>Send</Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row>

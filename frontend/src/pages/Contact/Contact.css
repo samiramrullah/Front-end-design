@@ -1,5 +1,13 @@
 .namefieldContactus {
   width: 60% !important;
-  height: 20%;
+  height: 3.5rem;
   text-align: center;
+}
+#messageInput {
+  width: 60%;
+  height: 95%;
+}
+
+#sendBtnContact{
+  height: 35%;
 }
