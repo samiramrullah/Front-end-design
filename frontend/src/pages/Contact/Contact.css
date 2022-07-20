@@ -12,7 +12,7 @@
   height: 35%;
 }
 .emailfieldContactus{
-  width: 61%;
+  width: 75% !important;
   height: 95%;
-  margin-right: 26%;
+  /* margin-right: 26%; */
 }

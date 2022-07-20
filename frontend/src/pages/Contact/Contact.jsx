@@ -1,13 +1,21 @@
 import React from 'react'
 import HomeWrapper from '../../components/HomeWrapper';
 import { Row, Col, Input, Button } from 'antd';
-import './Contact.css'
 import TextArea from 'antd/lib/input/TextArea';
+import { useState } from 'react';
+import './Contact.css'
 const Contact = () => {
+  const [enteredText,setEnteredText]=useState();
+  const [name,setName]=useState();
+  const [email,setEmail]=useState();
+  const sendTextHandler=()=>{
+    console.log(enteredText,name,email);
+
+  }
   return (
     <HomeWrapper>
-      <Row style={{ width: '100%', marginTop: '5%' ,marginLeft:'10%' }}>
-        <Col style={{ width: '50%', backgroundColor: 'red' }}>
+      <Row style={{ width: '100%', marginTop: '5%' }}>
+        <Col style={{ width: '50%', paddingLeft: '5rem' }}>
           <h1>Always for your services</h1>
           <p>Fell Free to react us</p>
           <h2>India</h2>
@@ -15,21 +23,21 @@ const Contact = () => {
           <p>160012, Chandigarh, India</p>
           <p>+91 9041952237</p>
         </Col>
-        <Col style={{ width: '50%',marginBottom:'2rem' }}>
+        <Col style={{ width: '50%', marginBottom: '2rem', paddingLeft: '2rem' }}>
           <Row>
             <Col style={{ width: '40%' }}>
-              <Input placeholder='Name' className='namefieldContactus' />
+              <Input placeholder='Name' className='namefieldContactus' onChange={(e)=>setName(e.target.value)}/>
             </Col>
             <Col style={{ width: '50%' }}>
-              <Input placeholder='Email' className='emailfieldContactus' type={'email'} />
+              <Input placeholder='Email' className='emailfieldContactus' type={'email'} onChange={(e)=>setEmail(e.target.value)} />
             </Col>
           </Row>
           <Row style={{ marginTop: '2rem', height: '100%' }}>
             <Col style={{ width: '100%' }}>
-              <TextArea id='messageInput' size="large" placeholder='Please Enter your message' />
+              <TextArea id='messageInput' size="large" placeholder='Please Enter your message' onChange={(e)=>setEnteredText(e.target.value)}/>
             </Col>
             <Col>
-              <Button size='large' id='sendBtnContact'>Send</Button>
+              <Button onClick={sendTextHandler} size='large' id='sendBtnContact'>Send</Button>
             </Col>
           </Row>
         </Col>
