@@ -2,6 +2,7 @@ import React from 'react'
 import HomeWrapper from '../../components/HomeWrapper';
 import { Row, Col, Input, Button } from 'antd';
 import './Contact.css'
+import TextArea from 'antd/lib/input/TextArea';
 const Contact = () => {
   return (
     <HomeWrapper>
@@ -14,7 +15,6 @@ const Contact = () => {
           <p>160012, Chandigarh, India</p>
           <p>+91 9041952237</p>
         </Col>
-
         <Col style={{ width: '50%',marginBottom:'2rem' }}>
           <Row>
             <Col style={{ width: '40%' }}>
@@ -26,7 +26,7 @@ const Contact = () => {
           </Row>
           <Row style={{ marginTop: '2rem', height: '100%' }}>
             <Col style={{ width: '100%' }}>
-              <Input id='messageInput' size="large" placeholder='Please Enter your message' />
+              <TextArea id='messageInput' size="large" placeholder='Please Enter your message' />
             </Col>
             <Col>
               <Button size='large' id='sendBtnContact'>Send</Button>
