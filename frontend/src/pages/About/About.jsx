@@ -11,7 +11,7 @@ const About = () => {
       <div className="AboutMain">
         <div class="we-are-block">
           <div id="about-us-section">
-            <button className='btn btn-light mt-1' onClick={backbuttonHandler}>Back</button>
+            <button className='backbtn' onClick={backbuttonHandler}>Back</button>
             <div class="about-us-image">
               <img id='img'src="https://wallpaperaccess.com/full/2675409.jpg" width="808" height="458" alt="Lobby Image" />
             </div>
