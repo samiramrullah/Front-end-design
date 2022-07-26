@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
+import {ArrowLeftOutlined} from '@ant-design/icons';
 import './About.css';
 const About = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const About = () => {
       <div className="AboutMain">
         <div class="we-are-block">
           <div id="about-us-section">
-            <button className='backbtn' onClick={backbuttonHandler}>Back</button>
+            <button className='backbtn' onClick={backbuttonHandler}><ArrowLeftOutlined /></button>
             <div class="about-us-image">
               <img id='img'src="https://wallpaperaccess.com/full/2675409.jpg" width="808" height="458" alt="Lobby Image" />
             </div>
